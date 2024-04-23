@@ -106,3 +106,42 @@ Ultimately, the system generated cosine similarity values satisfactorily, giving
 
 Testcases/Outputs:
 
+<img width="465" alt="1" src="https://github.com/SSP24SCM29E/IR-eng/assets/164987882/4bb1952a-c5f9-445f-8b49-dce05f08c0ad">
+
+<img width="464" alt="2" src="https://github.com/SSP24SCM29E/IR-eng/assets/164987882/98cf58de-55f0-409d-a296-ba4238c675e7">
+
+<img width="458" alt="3" src="https://github.com/SSP24SCM29E/IR-eng/assets/164987882/6406e625-3fda-4cb2-8cfc-85d205f23bcf">
+
+<img width="458" alt="4" src="https://github.com/SSP24SCM29E/IR-eng/assets/164987882/ac25e3e7-d86f-4368-851a-3410a5dc5d28">
+
+
+Cautions:
+
+Scalability: Make sure the system can manage high data loads and user inquiries without sacrificing efficiency.
+
+Data privacy: Comply with data privacy laws and guarantee user data security.
+
+Maintenance: To fix system flaws and boost efficiency, perform routine maintenance and updates.
+
+User input: To pinpoint areas in need of development and respond to user concerns, systematically compile user input.
+
+
+Data Sources - Links, downloads, access information
+
+Website used for web crawling:  https://flutter.dev/learn
+
+Downloads: Scikit-learn, Scrapy 2.11.1, beautifulsoup4, flask
+
+
+Bibilography
+
+https://scrapy.org/
+
+https://requests.readthedocs.io/en/latest/
+
+https://scikit-learn.org/stable/
+
+https://flask.palletsprojects.com/en/3.0.x/
+
+ACM/IEEE: C. D. Manning, P. Raghavan, and H. Schütze, Introduction to Information Retrieval. Cambridge University Press, 2008.
+
