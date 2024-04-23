@@ -1,0 +1,1274 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png" />
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png" />
+
+    <title>
+      
+        
+          
+        
+      
+      
+        Showcase - Flutter apps in production
+      
+    </title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="description" content="The world’s biggest businesses are building with Flutter. View the showcase and see Flutter apps in production."/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@flutterdev">
+
+    <meta property="og:title" content="Showcase - Flutter apps in production">
+    <meta property="og:url" content="//flutter.dev/showcase/">
+    <meta property="og:description" content="The world’s biggest businesses are building with Flutter. View the showcase and see Flutter apps in production.">
+    <meta property="og:image" content="https://storage.googleapis.com/cms-storage-bucket/70760bf1e88b184bb1bc.png">
+
+    
+      <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-ND4LWWZ');
+      </script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-67589403-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+
+    
+      <link href="https://storage.googleapis.com/cms-storage-bucket/main.6356cd07f2051cc4a8a7.css" rel="stylesheet" media="all">
+        
+
+    
+
+    <script async defer src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" 
+            data-auto-replace-svg="nest"></script>
+  </head>
+  <body 
+    class="interior showcase"
+    x-data="ScrollSpy"
+    x-on:scroll.window="onScroll"
+    x-bind:class="{ 'in-content': $store.spy.inContent }">
+    
+    
+    
+
+<header
+  role="banner"
+  x-data="Header()"
+  x-bind:class="{
+    'hide': !navOpen && $store.spy.inHomeHero,
+    'mobile': isMobile, 
+    'mobile-nav-open': navOpen, 
+    'searching': searchActive,
+    'header-dark': window.location.href.includes('games'),
+    'header-light': window.location.href.indexOf('games') === -1,
+  }"
+  x-on:resize.window.debounce.200="onResize"
+>
+  <div class="content" x-data="{ darkMode: window.location.href.includes('games') }">
+    <div>
+      <div class="logo logo-white">
+        <a href="/">
+          <img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg" alt="Flutter" />
+        </a>
+      </div>
+      <div class="logo logo-normal">
+        <a href="/">
+          <img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" alt="Flutter" x-show="!darkMode"/>
+          <img src="https://storage.googleapis.com/cms-storage-bucket/1870bdaf4a9523a10d5b.svg" alt="Flutter" x-show="darkMode"/>
+        </a>
+      </div>
+    </div>
+    <div class="tray">
+      <nav role="navigation">
+        <ul>
+          <li>
+            <a
+              href="/multi-platform"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Multi-Platform <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/multi-platform">Overview</a>
+                </li>
+                <li>
+                  <a class="btn" href="/multi-platform/mobile">Mobile</a>
+                  <ul>
+                    <li>
+                      <a class="btn subMenu" href="/multi-platform/ios">Flutter on iOS</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="btn" href="/multi-platform/web">Web</a></li>
+                <li>
+                  <a class="btn" href="/multi-platform/desktop">Desktop</a>
+                </li>
+                <li>
+                  <a class="btn" href="/multi-platform/embedded">Embedded</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+              href="/development"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Development <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/development">Overview</a>
+                </li>
+                <li><a class="btn" href="/learn">Learn</a></li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/packages-and-plugins/favorites"
+                    target="_blank"
+                    >Flutter Favorites</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://pub.dev" target="_blank"
+                    >Packages</a
+                  >
+                </li>
+                <li><a class="btn" href="/monetization">Monetization</a></li>
+                <li><a class="btn" href="/games">Games</a></li>
+                <li><a class="btn" href="/news">News</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+              href="/ecosystem"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Ecosystem <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/ecosystem">Overview</a>
+                </li>
+                <li><a class="btn" href="/community">Community</a></li>
+                <li><a class="btn" href="/events">Events</a></li>
+                <li><a class="btn" href="/culture">Culture</a></li>
+                <li><a class="btn" href="/consultants">Consultants</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/showcase" class="btn top-level"> Showcase </a>
+          </li>
+          <li>
+            <a
+              href="https://docs.flutter.dev"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Docs <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd dd-double">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="https://docs.flutter.dev">Overview</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/whats-new">What's new</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/get-started/editor"
+                    >Editor support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/tools/hot-reload"
+                    >Hot reload</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/perf/ui-performance"
+                    >Profiling</a
+                  >
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/get-started/install"
+                    >Install Flutter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/tools/devtools/overview"
+                    >DevTools</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/cookbook">Cookbook</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/reference/tutorials"
+                    >Tutorials</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="icon-btn search"
+        x-bind:class="{ 'active': searchActive || navOpen }"
+      >
+        <i class="fas fa-search search-icon" @click="toggleSearch($event)" x-show="!darkMode"> </i>
+        <i class="fas fa-search search-icon" style="color: #f8f9fa;" @click="toggleSearch($event)" x-show="darkMode"> </i>
+        <form action="https://docs.flutter.dev/search">
+          <input
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+            name="q"
+            id="q"
+            autocomplete="off"
+          />
+        </form>
+        <i
+          class="fas fa-times"
+          @click="toggleSearch($event)"
+          x-show="searchActive"
+        >
+        </i>
+      </div>
+
+      <a
+        href="https://docs.flutter.dev/get-started/install"
+        id="get-started__header"
+        class="btn"
+        >Get started</a
+      >
+
+      <a
+        href="https://io.google/2024/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=&utm_content="
+        id="global-gamers-challenge__header"
+        target="_blank"
+        class="btn"
+        >Register for Google I/O 2024</a
+      >
+
+      <div
+        class="icon-btn hamburger"
+        x-show="!navOpen"
+        @click="toggleMobileNav"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true" x-show="!darkMode"></i>
+        <i class="fas fa-bars fa-lg" style="color: #f8f9fa;" aria-hidden="true" x-show="darkMode"></i>
+      </div>
+      <div class="icon-btn close" x-show="navOpen" @click="toggleMobileNav">
+        <i class="fas fa-times fa-lg"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <main>
+      
+      
+
+<section id="header" class="hero">
+  <div class="container">
+    <div class="mantle">
+      <div class="text">
+        <h1>Flutter apps in production</h1>
+        <h2>Businesses of all sizes around the world are building with Flutter</h2>
+      </div>
+      <div class="media">
+        <img src="https://storage.googleapis.com/cms-storage-bucket/625121b763864bd5c67d.gif" alt="Flutter in production">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section 
+  class="content-container" 
+  x-data="initSpy(headerOffset, toggleContentActive)"
+  >
+
+  
+
+  
+  <section id="flutter-apps" class="module carousel-section">
+    <div class="stacked-header container">
+      <h2>Flutter at Google</h2>
+    </div>
+    <div 
+      class="carousel" 
+      x-data="Carousel"
+      x-on:resize.window.debounce.300="onResize">
+      <div 
+        class="carousel-slider"
+        x-ref="slider" 
+        x-on:scroll="onScroll">
+  
+        
+          
+
+<div class="story-item">
+    
+        <a href="https://flutter.dev/showcase/google-pay" target="_blank">
+    
+    <div>
+        <img alt="Google Pay.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/Google_Pay.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Pay</h3>
+        </div>
+    </div>
+    
+        <span class="btn learn-more-button">Learn More</span>
+        </a>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="earth_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/earth_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Earth</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="ads_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/ads_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Ads</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+        <a href="https://flutter.dev/showcase/google-classroom" target="_blank">
+    
+    <div>
+        <img alt="logo_classroom.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/logo_classroom.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Classroom</h3>
+        </div>
+    </div>
+    
+        <span class="btn learn-more-button">Learn More</span>
+        </a>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="ytcreate_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/ytcreate_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>YouTube Create</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="cloudsearch_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/cloudsearch_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Cloud</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="Google One.webp" height="512" src="https://storage.googleapis.com/cms-storage-bucket/images/Google_One.width-635.png" width="512">
+        <div class="text">
+            <h3>Google One</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="familylink_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/familylink_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>FamilyLink</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+        <a href="https://flutter.dev/showcase/crowdsource" target="_blank">
+    
+    <div>
+        <img alt="Crowdsource.webp" height="512" src="https://storage.googleapis.com/cms-storage-bucket/images/Crowdsource.width-635.png" width="512">
+        <div class="text">
+            <h3>Crowdsource</h3>
+        </div>
+    </div>
+    
+        <span class="btn learn-more-button">Learn More</span>
+        </a>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="analytics_logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/analytics_logo.width-635.png" width="480">
+        <div class="text">
+            <h3>Google Analytics</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+          
+
+<div class="story-item">
+    
+    <div>
+        <img alt="Readalong Logo.webp" height="480" src="https://storage.googleapis.com/cms-storage-bucket/images/Readalong_Logo.width-635.png" width="480">
+        <div class="text">
+            <h3>Readalong</h3>
+        </div>
+    </div>
+    
+</div>
+
+        
+  
+      </div>
+      <div class="carousel-progress container">
+        <div class="carousel-track">
+          <div class="carousel-completed" x-ref="progress"></div>
+        </div>
+        <div class="carousel-nav">
+          <a 
+            href="#" class="disabled"
+            x-ref="prevBtn" @click.prevent="navigate($event, 'bwd')">
+            <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+          </a>
+          <a 
+            href="#" class="disabled"
+            x-ref="nextBtn" @click.prevent="navigate($event, 'fwd')">
+            <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <section id="stories" class="module" x-data="Filters">
+    <div class="container story-grid" x-data="{ shownStoriesCount: 9 }">
+      <div class="story-grid-header">
+        <h3>User Showcase</h3>
+
+        
+
+<div
+  class="dropdown"
+  x-data="FiltersDropdown()"
+  x-on:resize.window.debounce.200="onResize"
+>
+  <button
+    class="btn top-level filters-dropdown__button"
+    :class="{ 'mobile-button': isMobile, 'primary': filtersCount > 0 }"
+    @click="toggleDropdown()"
+  >
+    Filters <div x-show="filtersCount > 0">(<span x-text="filtersCount"></span>)</div> <i x-show="filtersCount == 0" class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div
+    :class="{ 'show': isOpen, 'mobile-open': isMobile && isOpen }"
+    class="filters-dropdown-content"
+    x-show="isOpen"
+    @click.outside="toggleDropdown()"
+  >
+    <div class="filters-dropdown__mobile-header" :class="{ 'show': isMobile }">
+      <span>Filters</span>
+      <span @click="toggleDropdown()">
+        <i class="fa-solid fa-xmark fa-xl"></i>
+      </span>
+    </div>
+    <div class="filters-dropdown__filters-container">
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['Platform'] }" @click="onClickMobileDropdown($event, 'Platform')">
+          Platform
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['Platform'] }">
+          <label for="platform-mobile">
+            <input
+              id="platform-mobile"
+              type="checkbox"
+              value="Mobile"
+              :checked="selectedFilters.platforms['Mobile']"
+              x-model="selectedFilters.platforms['Mobile']"
+            />
+            Mobile
+          </label>
+          <label for="platform-web">
+            <input
+              id="platform-web"
+              type="checkbox"
+              value="Web"
+              :checked="selectedFilters.platforms['Web']"
+              x-model="selectedFilters.platforms['Web']"
+            />
+            Web
+          </label>
+          <label for="platform-desktop">
+            <input
+              id="platform-desktop"
+              type="checkbox"
+              value="Desktop"
+              :checked="selectedFilters.platforms['Desktop']"
+              x-model="selectedFilters.platforms['Desktop']"
+            />
+            Desktop
+          </label>
+          <label for="platform-embedded">
+            <input
+              id="platform-embedded"
+              type="checkbox"
+              value="Embedded"
+              :checked="selectedFilters.platforms['Embedded']"
+              x-model="selectedFilters.platforms['Embedded']"
+            />
+            Embedded
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['Industry'] }" @click="onClickMobileDropdown($event, 'Industry')">
+          Industry
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['Industry']}" >
+          <label for="industry-banking-finance">
+            <input
+              id="industry-banking-finance"
+              type="checkbox"
+              value="Banking & Finance"
+              :checked="selectedFilters.industries['Banking & Finance']"
+              x-model="selectedFilters.industries['Banking & Finance']"
+            />
+            Banking & Finance
+          </label>
+          <label for="industry-health">
+            <input
+              id="industry-health"
+              type="checkbox"
+              value="Health"
+              :checked="selectedFilters.industries['Health']"
+              x-model="selectedFilters.industries['Health']"
+            />
+            Health
+          </label>
+          <label for="industry-games">
+            <input
+              id="industry-games"
+              type="checkbox"
+              value="Games"
+              :checked="selectedFilters.industries['Games']"
+              x-model="selectedFilters.industries['Games']"
+            />
+            Games
+          </label>
+          <label for="industry-travel-lifestyle">
+            <input
+              id="industry-travel-lifestyle"
+              type="checkbox"
+              value="Travel & Lifestyle"
+              :checked="selectedFilters.industries['Travel & Lifestyle']"
+              x-model="selectedFilters.industries['Travel & Lifestyle']"
+            />
+            Travel & Lifestyle
+          </label>
+          <label for="industry-productivity">
+            <input
+              id="industry-productivity"
+              type="checkbox"
+              value="Productivity"
+              :checked="selectedFilters.industries['Productivity']"
+              x-model="selectedFilters.industries['Productivity']"
+            />
+            Productivity
+          </label>
+          <label for="industry-education">
+            <input
+              id="industry-education"
+              type="checkbox"
+              value="Education"
+              :checked="selectedFilters.industries['Education']"
+              x-model="selectedFilters.industries['Education']"
+            />
+            Education
+          </label>
+          <label for="industry-social">
+            <input
+              id="industry-social"
+              type="checkbox"
+              value="Social"
+              :checked="selectedFilters.industries['Social']"
+              x-model="selectedFilters.industries['Social']"
+            />
+            Social
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['Location'] }" @click="onClickMobileDropdown($event, 'Location')">
+          Location
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['Location']}">
+          <label for="location-asia">
+            <input
+              id="location-asia"
+              type="checkbox"
+              value="Asia"
+              :checked="selectedFilters.locations['Asia']"
+              x-model="selectedFilters.locations['Asia']"
+            />
+            Asia
+          </label>
+          <label for="location-africa">
+            <input
+              id="location-africa"
+              type="checkbox"
+              value="Africa"
+              :checked="selectedFilters.locations['Africa']"
+              x-model="selectedFilters.locations['Africa']"
+            />
+            Africa
+          </label>
+          <label for="location-north-america">
+            <input
+              id="location-north-america"
+              type="checkbox"
+              value="North America"
+              :checked="selectedFilters.locations['North America']"
+              x-model="selectedFilters.locations['North America']"
+            />
+            North America
+          </label>
+          <label for="location-south-america">
+            <input
+              id="location-south-america"
+              type="checkbox"
+              value="South America"
+              :checked="selectedFilters.locations['South America']"
+              x-model="selectedFilters.locations['South America']"
+            />
+            South America
+          </label>
+          <label for="location-europe">
+            <input
+              id="location-europe"
+              type="checkbox"
+              value="Europe"
+              :checked="selectedFilters.locations['Europe']"
+              x-model="selectedFilters.locations['Europe']"
+            />
+            Europe
+          </label>
+          <label for="location-australia">
+            <input
+              id="location-australia"
+              type="checkbox"
+              value="Australia"
+              :checked="selectedFilters.locations['Australia']"
+              x-model="selectedFilters.locations['Australia']"
+            />
+            Australia
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+    </div>
+    <div class="filters-dropdown__buttons-container">
+      <button
+        class="btn filters-dropdown__clear-all-button"
+        @click="clearAllFilters()"
+      >
+        Clear All
+      </button>
+      <button class="btn" @click="applyFilters()">Apply</button>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+      <div class="story-grid-items">
+        <template x-for="(item, index) in filteredStories([{&#x27;headline&#x27;: &#x27;Google Classroom&#x27;, &#x27;summary&#x27;: &#x27;Increasing productivity with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Googleclassroom_casestudy.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-22&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/google-classroom/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Google&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Alibaba Group&#x27;, &#x27;summary&#x27;: &#x27;Alibaba scales China’s largest second-hand marketplace with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Alibaba_Group.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/alibaba-group/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;, &#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;ByteDance&#x27;, &#x27;summary&#x27;: &#x27;Increasing productivity by 33% at ByteDance with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_byteDance.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/bytedance/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;, &#x27;Embedded&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;, &#x27;Social&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Tencent&#x27;, &#x27;summary&#x27;: &#x27;Tencent takes large, strategic bet on Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Tencent.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tencent/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Betterment&#x27;, &#x27;summary&#x27;: &#x27;Scaling development at Betterment with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study-02.png&#x27;, &#x27;date&#x27;: &#x27;2023-05-04&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/betterment/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;US Department of Veterans Affairs&#x27;, &#x27;summary&#x27;: &#x27;STAIR: Helping veterans acclimate back into civilian life with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_STAIR.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/us-department-of-veterans-affairs/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Abbey Road Studios&#x27;, &#x27;summary&#x27;: &#x27;Reinventing the songwriting process with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Abbey_Road_Studios.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/abbey-road-studios/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;, &#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Tencent Cloud Chat&#x27;, &#x27;summary&#x27;: &#x27;Tencent Cloud Chat increased development efficiency by 77% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study.png&#x27;, &#x27;date&#x27;: &#x27;2023-06-30&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tencent-cloud-chat/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;MarketWatch Stock Market Game&#x27;, &#x27;summary&#x27;: &#x27;MarketWatch launches Virtual Stock Exchange app in 3 months with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/casestudy_Dowjones2.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/dow-jones/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;eBay&#x27;, &#x27;summary&#x27;: &#x27;Delighting engineers at eBay with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_eBay.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/ebay/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;BMW&#x27;, &#x27;summary&#x27;: &#x27;Scaling customer-centric product development at BMW Group with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_BMW.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/bmw/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Google Pay&#x27;, &#x27;summary&#x27;: &#x27;Going global at Google Pay with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Google_Pay_1.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-04&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/google-pay/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;, &#x27;Google&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Beike&#x27;, &#x27;summary&#x27;: &#x27;Beike helps users solve housing problems with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Beike.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/beike/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Nubank&#x27;, &#x27;summary&#x27;: &#x27;Scaling with integrity at Nubank with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Nubank.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/nubank/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Dream11&#x27;, &#x27;summary&#x27;: &#x27;Supporting 50 million fantasy sports users in India&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Dream_11.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/dream11/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;4 Pics 1 Word&#x27;, &#x27;summary&#x27;: &#x27;Reaching new users at Lotum with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Lotum.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/lotum/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;PUBG MOBILE&#x27;, &#x27;summary&#x27;: &#x27;Connecting 1 billion players with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/PUBG_casestudy.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/pubg-mobile/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;iRobot&#x27;, &#x27;summary&#x27;: &#x27;iRobot Uses Flutter to Expand Access to Coding&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_iRobot.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/irobot/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;QuintoAndar&#x27;, &#x27;summary&#x27;: &#x27;Achieving feature parity at QuintoAndar with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Quinto_Andar.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/quintoandar/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;CrowdSource&#x27;, &#x27;summary&#x27;: &#x27;Increasing developer speed at Crowdsource with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_CrowdSource.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/crowdsource/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Google&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Hamilton&#x27;, &#x27;summary&#x27;: &#x27;Taking the Hamilton experience beyond the theater with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Hamilton.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/hamilton/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Toyota&#x27;, &#x27;summary&#x27;: &#x27;Improving infotainment systems at Toyota with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Toyota.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/toyota/&#x27;, &#x27;options_platform&#x27;: [&#x27;Embedded&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Push&#x27;, &#x27;summary&#x27;: &#x27;Optimizing Athletic Training with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Push.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/push/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Reflectly&#x27;, &#x27;summary&#x27;: &#x27;Reflectly designs unique digital experiences with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Reflectly.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/reflectly/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Rive&#x27;, &#x27;summary&#x27;: &#x27;Rive rewrote their powerful animation tool entirely in Flutter to enable developers to create beautiful, multi-platform illustrations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Rive.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/rive/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Sua Musica&#x27;, &#x27;summary&#x27;: &#x27;Supporting 10 million monthly users with Sua Musica&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Sua_Musica.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/sua-musica/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Supernova&#x27;, &#x27;summary&#x27;: &#x27;Supernova, a design system platform, used Flutter to build their collaborative  web app for designers and developers.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_SuperNova.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/supernova/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Wallace &amp; Gromit AR&#x27;, &#x27;summary&#x27;: &#x27;Building an Innovative Storytelling Experience with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Wallace___Gromit_AR.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/wallace-gromit-ar/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Rows&#x27;, &#x27;summary&#x27;: &#x27;Creating the future of spreadsheets with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Rows_-_case_study.png&#x27;, &#x27;date&#x27;: &#x27;2022-04-06&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/rows/&#x27;, &#x27;options_platform&#x27;: [&#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Superlist&#x27;, &#x27;summary&#x27;: &#x27;Rethinking task and project management with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Google_iO.png&#x27;, &#x27;date&#x27;: &#x27;2022-06-14&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/superlist/&#x27;, &#x27;options_platform&#x27;: [&#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Tonal&#x27;, &#x27;summary&#x27;: &#x27;Ensuring feature parity at Tonal with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Tonal.png&#x27;, &#x27;date&#x27;: &#x27;2022-08-03&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tonal/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Travelstart&#x27;, &#x27;summary&#x27;: &#x27;When the pandemic gave Africa’s leading online travel agency an opportunity to reconsider their tech stack, they turned to Flutter to migrate all their apps to a single codebase.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/TravelStart_thumbnail.png&#x27;, &#x27;date&#x27;: &#x27;2022-08-25&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/travelstart/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Africa&#x27;]}, {&#x27;headline&#x27;: &#x27;Reflection.app&#x27;, &#x27;summary&#x27;: &#x27;Reflection.app scales their business with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Journal_Dark_Mobile__Desktop.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-10&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/reflectionapp/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Caribou Coffee&#x27;, &#x27;summary&#x27;: &#x27;Caribou Coffee migrates their app to a single codebase with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Caribou.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-10&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/caribou-coffee/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Crédit Agricole&#x27;, &#x27;summary&#x27;: &#x27;Crédit Agricole puts customers first with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/CA24_casestudy1_Google_Pay_copy.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-27&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/credit-agricole/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;So Vegan&#x27;, &#x27;summary&#x27;: &#x27;So Vegan wins Apple’s App of the Day twice with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Sovegan_casestudy1_MGM_Resorts_copy_2.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-27&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/so-vegan/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Klasha&#x27;, &#x27;summary&#x27;: &#x27;Connecting Africa to the world with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/klasha_casestudy_MGM_Resorts_copy_4.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/klasha/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Africa&#x27;]}, {&#x27;headline&#x27;: &#x27;Skandia&#x27;, &#x27;summary&#x27;: &#x27;Skandia improves their mobile app quality with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study-01.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/skandia/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;AnyMind&#x27;, &#x27;summary&#x27;: &#x27;AnyMind increases developer efficiency with Flutter News Toolkit&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study_1.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/anymind/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Kijiji&#x27;, &#x27;summary&#x27;: &#x27;Kijiji launches features faster with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/kijiji-case-study-01.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-28&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/kijiji1/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;CZ Zorgverzekeringen&#x27;, &#x27;summary&#x27;: &#x27;Building reliable, secure digital health insurance access with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study2x.png&#x27;, &#x27;date&#x27;: &#x27;2023-08-03&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/cz-zorgverzekeringen/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Lucid Motors&#x27;, &#x27;summary&#x27;: &#x27;Small team at Lucid Motors quickly launches a multiplatform app from a single codebase with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Group_27.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/lucid-motors/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Romwe Fashion&#x27;, &#x27;summary&#x27;: &#x27;ROMWE improves developer efficiency by 30% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_6.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/romwe-fashion-shein/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Grupo Soma&#x27;, &#x27;summary&#x27;: &#x27;Grupo Soma increases in-app purchases by 12% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_4.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/grupo-soma/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Onrizon Social Games&#x27;, &#x27;summary&#x27;: &#x27;Onrizon doubles earnings and improves app rating with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_5.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/onrizon-games/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;STAGE&#x27;, &#x27;summary&#x27;: &#x27;STAGE uses Firebase and Flutter to cut release time in half&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Stage_Case_Study_12x.png&#x27;, &#x27;date&#x27;: &#x27;2023-12-09&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/stage/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Sözcü&#x27;, &#x27;summary&#x27;: &#x27;Estetik Yayıncılık increases ad revenue by 331% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Flutter_SOZCU_Case_Study_32x.png&#x27;, &#x27;date&#x27;: &#x27;2023-12-12&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/sozcu/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;, &#x27;Europe&#x27;]}])" :key="item.headline">
+          <div class="story-item" x-show="index < shownStoriesCount">
+            <a :href="item.pageurl">
+                <div class="text showcase__story-content">
+                  <img :src="item.card"></img>
+                  <span x-text="formatDate(item.date)"></span>
+                  <h3 x-text="item.headline"></h3>
+                  <p x-text="item.summary"></p>
+                </div>
+            </a>
+          </div>
+        </template>
+      </div>
+      <button @click="shownStoriesCount+=9" class="btn" x-show="filteredStories([{&#x27;headline&#x27;: &#x27;Google Classroom&#x27;, &#x27;summary&#x27;: &#x27;Increasing productivity with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Googleclassroom_casestudy.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-22&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/google-classroom/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Google&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Alibaba Group&#x27;, &#x27;summary&#x27;: &#x27;Alibaba scales China’s largest second-hand marketplace with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Alibaba_Group.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/alibaba-group/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;, &#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;ByteDance&#x27;, &#x27;summary&#x27;: &#x27;Increasing productivity by 33% at ByteDance with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_byteDance.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/bytedance/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;, &#x27;Embedded&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;, &#x27;Social&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Tencent&#x27;, &#x27;summary&#x27;: &#x27;Tencent takes large, strategic bet on Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Tencent.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tencent/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Betterment&#x27;, &#x27;summary&#x27;: &#x27;Scaling development at Betterment with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study-02.png&#x27;, &#x27;date&#x27;: &#x27;2023-05-04&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/betterment/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;US Department of Veterans Affairs&#x27;, &#x27;summary&#x27;: &#x27;STAIR: Helping veterans acclimate back into civilian life with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_STAIR.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/us-department-of-veterans-affairs/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Abbey Road Studios&#x27;, &#x27;summary&#x27;: &#x27;Reinventing the songwriting process with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Abbey_Road_Studios.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/abbey-road-studios/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;, &#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Tencent Cloud Chat&#x27;, &#x27;summary&#x27;: &#x27;Tencent Cloud Chat increased development efficiency by 77% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study.png&#x27;, &#x27;date&#x27;: &#x27;2023-06-30&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tencent-cloud-chat/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;MarketWatch Stock Market Game&#x27;, &#x27;summary&#x27;: &#x27;MarketWatch launches Virtual Stock Exchange app in 3 months with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/casestudy_Dowjones2.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/dow-jones/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;eBay&#x27;, &#x27;summary&#x27;: &#x27;Delighting engineers at eBay with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_eBay.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/ebay/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;BMW&#x27;, &#x27;summary&#x27;: &#x27;Scaling customer-centric product development at BMW Group with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_BMW.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/bmw/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Google Pay&#x27;, &#x27;summary&#x27;: &#x27;Going global at Google Pay with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Google_Pay_1.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-04&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/google-pay/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;, &#x27;Google&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Beike&#x27;, &#x27;summary&#x27;: &#x27;Beike helps users solve housing problems with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Beike.png&#x27;, &#x27;date&#x27;: &#x27;2021-10-29&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/beike/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Nubank&#x27;, &#x27;summary&#x27;: &#x27;Scaling with integrity at Nubank with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Nubank.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/nubank/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Dream11&#x27;, &#x27;summary&#x27;: &#x27;Supporting 50 million fantasy sports users in India&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Dream_11.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/dream11/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;4 Pics 1 Word&#x27;, &#x27;summary&#x27;: &#x27;Reaching new users at Lotum with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Lotum.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/lotum/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;PUBG MOBILE&#x27;, &#x27;summary&#x27;: &#x27;Connecting 1 billion players with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/PUBG_casestudy.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/pubg-mobile/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;iRobot&#x27;, &#x27;summary&#x27;: &#x27;iRobot Uses Flutter to Expand Access to Coding&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_iRobot.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/irobot/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;QuintoAndar&#x27;, &#x27;summary&#x27;: &#x27;Achieving feature parity at QuintoAndar with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Quinto_Andar.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/quintoandar/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;CrowdSource&#x27;, &#x27;summary&#x27;: &#x27;Increasing developer speed at Crowdsource with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_CrowdSource.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/crowdsource/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Google&#x27;, &#x27;Education&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Hamilton&#x27;, &#x27;summary&#x27;: &#x27;Taking the Hamilton experience beyond the theater with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Hamilton.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/hamilton/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Toyota&#x27;, &#x27;summary&#x27;: &#x27;Improving infotainment systems at Toyota with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Toyota.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/toyota/&#x27;, &#x27;options_platform&#x27;: [&#x27;Embedded&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Push&#x27;, &#x27;summary&#x27;: &#x27;Optimizing Athletic Training with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Push.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/push/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Reflectly&#x27;, &#x27;summary&#x27;: &#x27;Reflectly designs unique digital experiences with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_1_Reflectly.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/reflectly/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Rive&#x27;, &#x27;summary&#x27;: &#x27;Rive rewrote their powerful animation tool entirely in Flutter to enable developers to create beautiful, multi-platform illustrations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Rive.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/rive/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Sua Musica&#x27;, &#x27;summary&#x27;: &#x27;Supporting 10 million monthly users with Sua Musica&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Sua_Musica.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/sua-musica/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Supernova&#x27;, &#x27;summary&#x27;: &#x27;Supernova, a design system platform, used Flutter to build their collaborative  web app for designers and developers.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_SuperNova.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/supernova/&#x27;, &#x27;options_platform&#x27;: [&#x27;Web&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Wallace &amp; Gromit AR&#x27;, &#x27;summary&#x27;: &#x27;Building an Innovative Storytelling Experience with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Wallace___Gromit_AR.png&#x27;, &#x27;date&#x27;: &#x27;2021-11-05&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/wallace-gromit-ar/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Rows&#x27;, &#x27;summary&#x27;: &#x27;Creating the future of spreadsheets with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Rows_-_case_study.png&#x27;, &#x27;date&#x27;: &#x27;2022-04-06&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/rows/&#x27;, &#x27;options_platform&#x27;: [&#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Superlist&#x27;, &#x27;summary&#x27;: &#x27;Rethinking task and project management with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Google_iO.png&#x27;, &#x27;date&#x27;: &#x27;2022-06-14&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/superlist/&#x27;, &#x27;options_platform&#x27;: [&#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Tonal&#x27;, &#x27;summary&#x27;: &#x27;Ensuring feature parity at Tonal with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Tonal.png&#x27;, &#x27;date&#x27;: &#x27;2022-08-03&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/tonal/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;, &#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Travelstart&#x27;, &#x27;summary&#x27;: &#x27;When the pandemic gave Africa’s leading online travel agency an opportunity to reconsider their tech stack, they turned to Flutter to migrate all their apps to a single codebase.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/TravelStart_thumbnail.png&#x27;, &#x27;date&#x27;: &#x27;2022-08-25&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/travelstart/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Africa&#x27;]}, {&#x27;headline&#x27;: &#x27;Reflection.app&#x27;, &#x27;summary&#x27;: &#x27;Reflection.app scales their business with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Journal_Dark_Mobile__Desktop.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-10&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/reflectionapp/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Caribou Coffee&#x27;, &#x27;summary&#x27;: &#x27;Caribou Coffee migrates their app to a single codebase with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case_study_part_2_Caribou.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-10&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/caribou-coffee/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Crédit Agricole&#x27;, &#x27;summary&#x27;: &#x27;Crédit Agricole puts customers first with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/CA24_casestudy1_Google_Pay_copy.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-27&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/credit-agricole/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;So Vegan&#x27;, &#x27;summary&#x27;: &#x27;So Vegan wins Apple’s App of the Day twice with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Sovegan_casestudy1_MGM_Resorts_copy_2.png&#x27;, &#x27;date&#x27;: &#x27;2022-10-27&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/so-vegan/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Klasha&#x27;, &#x27;summary&#x27;: &#x27;Connecting Africa to the world with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/klasha_casestudy_MGM_Resorts_copy_4.png&#x27;, &#x27;date&#x27;: &#x27;2023-01-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/klasha/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Africa&#x27;]}, {&#x27;headline&#x27;: &#x27;Skandia&#x27;, &#x27;summary&#x27;: &#x27;Skandia improves their mobile app quality with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study-01.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/skandia/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Banking &amp; Finance&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;AnyMind&#x27;, &#x27;summary&#x27;: &#x27;AnyMind increases developer efficiency with Flutter News Toolkit&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study_1.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-21&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/anymind/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Productivity&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Kijiji&#x27;, &#x27;summary&#x27;: &#x27;Kijiji launches features faster with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/kijiji-case-study-01.png&#x27;, &#x27;date&#x27;: &#x27;2023-03-28&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/kijiji1/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;CZ Zorgverzekeringen&#x27;, &#x27;summary&#x27;: &#x27;Building reliable, secure digital health insurance access with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/case-study2x.png&#x27;, &#x27;date&#x27;: &#x27;2023-08-03&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/cz-zorgverzekeringen/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Health&#x27;], &#x27;options_location&#x27;: [&#x27;Europe&#x27;]}, {&#x27;headline&#x27;: &#x27;Lucid Motors&#x27;, &#x27;summary&#x27;: &#x27;Small team at Lucid Motors quickly launches a multiplatform app from a single codebase with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Group_27.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/lucid-motors/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;North America&#x27;]}, {&#x27;headline&#x27;: &#x27;Romwe Fashion&#x27;, &#x27;summary&#x27;: &#x27;ROMWE improves developer efficiency by 30% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_6.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/romwe-fashion-shein/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Grupo Soma&#x27;, &#x27;summary&#x27;: &#x27;Grupo Soma increases in-app purchases by 12% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_4.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/grupo-soma/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;Onrizon Social Games&#x27;, &#x27;summary&#x27;: &#x27;Onrizon doubles earnings and improves app rating with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/image_5.png&#x27;, &#x27;date&#x27;: &#x27;2023-11-15&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/onrizon-games/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Games&#x27;], &#x27;options_location&#x27;: [&#x27;South America&#x27;]}, {&#x27;headline&#x27;: &#x27;STAGE&#x27;, &#x27;summary&#x27;: &#x27;STAGE uses Firebase and Flutter to cut release time in half&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Stage_Case_Study_12x.png&#x27;, &#x27;date&#x27;: &#x27;2023-12-09&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/stage/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;, &#x27;Web&#x27;, &#x27;Desktop&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;]}, {&#x27;headline&#x27;: &#x27;Sözcü&#x27;, &#x27;summary&#x27;: &#x27;Estetik Yayıncılık increases ad revenue by 331% with Flutter&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Flutter_SOZCU_Case_Study_32x.png&#x27;, &#x27;date&#x27;: &#x27;2023-12-12&#x27;, &#x27;pageurl&#x27;: &#x27;/showcase/sozcu/&#x27;, &#x27;options_platform&#x27;: [&#x27;Mobile&#x27;], &#x27;options_social&#x27;: [&#x27;Travel &amp; Lifestyle&#x27;], &#x27;options_location&#x27;: [&#x27;Asia&#x27;, &#x27;Europe&#x27;]}]).length > shownStoriesCount">Load more</button>
+    </div>
+    <div class="container see-more">
+      <a class="btn quiet" href="https://itsallwidgets.com/">
+        See more Flutter apps on It's All Widgets &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+      </a>
+    </div>
+  </section>
+  
+
+  
+    <section id="developer-stories" class="module carousel-section">
+      <div class="stacked-header container">
+        <h2>Developer Stories</h2>
+      </div>
+      <div 
+        class="carousel"  
+        x-data="Carousel"
+        x-on:resize.window.debounce.300="onResize">
+        <div 
+          class="carousel-slider"
+          x-ref="slider" 
+          x-on:scroll="onScroll">
+
+        
+        <div class="story-item">
+          <a href="/showcase/patchme-eye-patch-tracking/">
+            
+            <img alt="case study part 1_PatchMe App.png" height="360" src="https://storage.googleapis.com/cms-storage-bucket/images/case_study_part_1_PatchMe_App.width-484.png" width="484">
+            <div class="text">
+              <h3>Patch Me: Eye Patch Tracking</h3>
+              <p>Taking back control with Flutter</p>
+            </div>
+            
+          </a>
+        </div>
+        
+        <div class="story-item">
+          <a href="/showcase/robert-felker/">
+            
+            <img alt="case study part 2_Robert Felker.png" height="360" src="https://storage.googleapis.com/cms-storage-bucket/images/case_study_part_2_Robert_Felker.width-484.png" width="484">
+            <div class="text">
+              <h3>Robert Felker: Generative Art</h3>
+              <p>Pushing artistic and technological boundaries with Flutter</p>
+            </div>
+            
+          </a>
+        </div>
+        
+        <div class="story-item">
+          <a href="/showcase/tatsuya-inoue/">
+            
+            <img alt="Tatsuya Case Study 1@2x.png" height="360" src="https://storage.googleapis.com/cms-storage-bucket/images/Tatsuya_Case_Study_12x.width-484.png" width="484">
+            <div class="text">
+              <h3>Tatsuya Inoue</h3>
+              <p>Tatsuya Inoue makes his acclaimed debut with Flutter</p>
+            </div>
+            
+          </a>
+        </div>
+        
+
+        </div>
+        <div class="carousel-progress container">
+          <div class="carousel-track">
+            <div class="carousel-completed" x-ref="progress"></div>
+          </div>
+          <div class="carousel-nav">
+            <a 
+              href="#" class="disabled"
+              x-ref="prevBtn" @click.prevent="navigate($event, 'bwd')">
+              <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+            </a>
+            <a 
+              href="#" class="disabled"
+              x-ref="nextBtn" @click.prevent="navigate($event, 'fwd')">
+              <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+  <section id="quote" class="module">
+    <div class="container testimonial">
+      <img src="https://storage.googleapis.com/cms-storage-bucket/1a553a2f33d62eda926f.png" role="presentation">
+      <div class="testimonial-wrapper">
+        <div class="testimonial-logo">
+          <img src="https://storage.googleapis.com/cms-storage-bucket/c1000ff9421405743627.svg" alt="Alibaba">
+        </div>
+        <div class="testimonial-quote">
+          <blockquote>
+            <p>Flutter significantly reduced the time we need to develop for new feature from 1 month down to 2 weeks.</p>
+          </blockquote>
+          <div class="sep"></div>
+          <span rel="author">Bruce Chen</span><br/>
+          <span rel="company">Senior Development Engineer, Alibaba</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="demos" class="module carousel-section">
+    <div class="container stacked-header">
+      <h2 class="push-left">Demos</h2>
+    </div>
+    <div 
+      class="carousel" 
+      x-data="Carousel"
+      x-on:resize.window.debounce.300="onResize">
+      <div 
+        class="carousel-slider"
+        x-ref="slider" 
+        x-on:scroll="onScroll">
+
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://flip.withgoogle.com/" target="_blank">
+    
+        <img alt="Flip Hero Graphic.png" height="288" src="https://storage.googleapis.com/cms-storage-bucket/images/Flip_Hero_Graphic.width-635.png" width="512">
+        
+        <div class="text">
+            <h3>I/O Flip</h3>
+            <p>An AI designed card game showcasing PaLM, MakerSuite, Dreambooth, Flutter, Firebase, and Cloud.</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://holobooth.flutter.dev/" target="_blank">
+    
+        <img alt="Homepage Horizontal_Holobooth_Centered_v01 1.png" height="288" src="https://storage.googleapis.com/cms-storage-bucket/images/Homepage_Horizontal_Holobooth_Centered_v01_1.width-635.png" width="512">
+        
+        <div class="text">
+            <h3>Holobooth</h3>
+            <p>Flutter + MediaPipe and Tensorflow in an AI game experience on the web</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://pinball.flutter.dev/" target="_blank">
+    
+        <img alt="unnamed (19).png" height="288" src="https://storage.googleapis.com/cms-storage-bucket/images/unnamed_19.width-635.png" width="512">
+        
+        <div class="text">
+            <h3>I/O Pinball</h3>
+            <p>A Flutter Web game showcasing the capabilities of Flame, the Flutter 2D Game Engine</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://photobooth.flutter.dev/" target="_blank">
+    
+        <img alt="f647a34449b59ead80eb.jpg" height="345" src="https://storage.googleapis.com/cms-storage-bucket/images/f647a34449b59ead80eb.width-635.jpg" width="635">
+        
+        <div class="text">
+            <h3>I/O Photo Booth</h3>
+            <p>Take a photo with this web app that showcased Flutter and Firebase for Google I/O 2021.</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://dashatar-dev.web.app/" target="_blank">
+    
+        <img alt="40d07828009ba743c15c.jpg" height="345" src="https://storage.googleapis.com/cms-storage-bucket/images/40d07828009ba743c15c.width-635.jpg" width="635">
+        
+        <div class="text">
+            <h3>Dashatar</h3>
+            <p>A Flutter web app demo to create a Dashatar for Flutter Engage.</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://flutter.gskinner.com/flokk" target="_blank">
+    
+        <img alt="36ebe089ccb7d2d9a718.jpg" height="345" src="https://storage.googleapis.com/cms-storage-bucket/images/36ebe089ccb7d2d9a718.width-635.jpg" width="635">
+        
+        <div class="text">
+            <h3>Flutter Flokk</h3>
+            <p>A fresh and modern Google Contacts manager that integrates with GitHub and Twitter.</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://flutter.gskinner.com/folio" target="_blank">
+    
+        <img alt="6434f199d7f9f1434d5e.jpg" height="345" src="https://storage.googleapis.com/cms-storage-bucket/images/6434f199d7f9f1434d5e.width-635.jpg" width="635">
+        
+        <div class="text">
+            <h3>Flutter Folio</h3>
+            <p>Try the scrapbooking app that runs on iOS, Android, Mac, Linux, Windows, and the web.</p>
+        </div>
+    </a>
+</div>
+        
+            
+
+<div class="story-item">
+    
+        <a href="https://flutter.gskinner.com/vignettes" target="_blank">
+    
+        <img alt="961a44387317db2af78f.jpg" height="345" src="https://storage.googleapis.com/cms-storage-bucket/images/961a44387317db2af78f.width-635.jpg" width="635">
+        
+        <div class="text">
+            <h3>Flutter Vignette</h3>
+            <p>Get inspiration with these innovative app designs made with Flutter.</p>
+        </div>
+    </a>
+</div>
+        
+      </div>
+      <div class="container carousel-progress">
+        <div class="carousel-track">
+          <div class="carousel-completed" x-ref="progress"></div>
+        </div>
+        <div class="carousel-nav">
+          <a 
+            href="#" class="disabled"
+            x-ref="prevBtn" @click.prevent="navigate($event, 'bwd')">
+            <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+          </a>
+          <a 
+            href="#" class="disabled"
+            x-ref="nextBtn" @click.prevent="navigate($event, 'fwd')">
+            <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="companies" class="module">
+    <div class="container">
+      <h2 class="subheader push-left">Companies using Flutter</h2>
+      <div class="logo-garden">
+        <div class="inner-fixed">
+          <div class="logo-row">
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/c1000ff9421405743627.svg" alt="Alibaba"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/1d9b68bf24ce5fb0ea56.svg" alt="Baidu"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/97c00c407393505b639f.svg" alt="Betterment"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/f777219d6581e15d8eeb.svg" alt="Bytedance"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/e56cc0d1fbe2a3d73496.svg" alt="CrowdSource"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/8e2858e92284b9d64bc9.svg" alt="Dream11"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/d10d50462c35626a2ed8.svg" alt="Ebay"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/8a8dcd51fa3ff27eae68.svg" alt="GoogleAds"></div>
+          </div>
+          <div class="logo-row">
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/455715560469e0d46a61.svg" alt="GooglePay"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/0935a9aa643a1a19b3cd.svg" alt="Groupon"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/4b87234e95fb200208ba.svg" alt="Hamilton"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/f453560288e49ef1a220.svg" alt="iRobot"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/84308af699b5a299f1af.svg" alt="Kotak"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/54430e0b5c156037ad1f.svg" alt="Lotum"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/a95814af82f794458f82.svg" alt="MGM"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/b69d05d69cd668df2f8c.svg" alt="Nubank"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/755432d87de85ced1687.svg" alt="NY Times"></div>
+          </div>
+          <div class="logo-row">
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/3d2c4bdcf7c2b402aaf8.png" alt="Philips Hue"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/fd9ccb684f22faf71a61.svg" alt="Realtor.com"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/b2f75154dc7faecd4e47.svg" alt="Square"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/f73b778da31025fe5f4b.svg" alt="Suamusica"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/51640d4e54a6e8a5787e.svg" alt="Surface"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/d67e0d9ef41c618324b3.svg" alt="Tencent"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/6769550706195145726c.svg" alt="Toyota"></div>
+            <div><img src="https://storage.googleapis.com/cms-storage-bucket/f91964de5fb250e3c2b2.svg" alt="Ubuntu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+<section id="cta" class="module">
+  <div class="insert cta-insert container">
+    <div class="text">
+      <h3>Get started</h3>
+      <p>Instant access to the power of the Flutter framework</p>
+      <div>
+        <a href="https://docs.flutter.dev/get-started/install" class="btn">
+          Install
+        </a>
+        <a href="https://docs.flutter.dev" class="btn quiet">
+          Read the docs &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      </div>
+    </div>
+    <div class="media">
+      <img src="https://storage.googleapis.com/cms-storage-bucket/72521e62275b24d3c37d.png" alt="Powered by Dart">
+    </div>
+  </div>
+</section>
+
+
+  
+</section>
+
+    </main>
+    
+    
+
+<footer x-data="{ darkMode: window.location.href.includes('games') }" :class="window.location.href.includes('games') ? 'footer-dark' : 'footer-light'">
+  <div class="content footer-main">
+    <div class="logo">
+      <a href="/">
+        <img
+          x-show="!darkMode"
+          src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg"
+          width="154"
+          alt="Flutter"
+        />
+        <img
+          x-show="darkMode"
+          src="https://storage.googleapis.com/cms-storage-bucket/1870bdaf4a9523a10d5b.svg"
+          width="154"
+          alt="Flutter"
+        />
+      </a>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li>About Flutter</li>
+        <li>
+          <a href="https://docs.flutter.dev/jobs" target="_blank">Careers</a>
+        </li>
+        <li><a href="https://medium.com/flutter" target="_blank">News</a></li>
+        <li><a href="/brand">Brand</a></li>
+        <li><a href="/culture">Culture</a></li>
+      </ul>
+      <ul>
+        <li>Learn Flutter</li>
+        <li><a href="/learn" target="_blank">Learning Journey</a></li>
+        <li><a href="https://docs.flutter.dev/codelabs" target="_blank">Codelabs</a></li>
+        <li>
+          <a href="https://flutter.github.io/samples" target="_blank"
+            >Samples</a
+          >
+        </li>
+        <li><a href="https://docs.flutter.dev/cookbook" target="_blank">Cookbook</a></li>
+      </ul>
+      <ul>
+        <li>Multi-Platform</li>
+        <li><a href="/multi-platform/mobile">Mobile</a></li>
+        <li><a href="/multi-platform/web">Web</a></li>
+        <li><a href="/multi-platform/desktop">Desktop</a></li>
+        <li><a href="/multi-platform/embedded">Embedded</a></li>
+        <li><a href="/multi-platform/ios">iOS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content footer-social">
+    <div>
+      <a
+        href="https://www.youtube.com/flutterdev"
+        target="_blank"
+        aria-label="Flutter YouTube"
+      >
+        <i class="fab fa-youtube fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-youtube fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://twitter.com/flutterdev"
+        target="_blank"
+        aria-label="Flutter Twittter"
+      >
+        <i class="fab fa-x-twitter fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-x-twitter fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://github.com/flutter"
+        target="_blank"
+        aria-label="Flutter Github"
+      >
+        <i class="fab fa-github fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-github fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://medium.com/flutter"
+        target="_blank"
+        aria-label="Flutter Medium"
+      >
+        <i class="fab fa-medium fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-medium fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://www.meetup.com/pro/flutter/"
+        target="_blank"
+        aria-label="Flutter Meetup"
+      >
+        <i class="fab fa-meetup fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-meetup fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/showcase/flutterdevofficial/"
+        target="_blank"
+        aria-label="Flutter LinkedIn"
+      >
+        <i class="fab fa-linkedin fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-linkedin fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+    </div>
+  </div>
+  <div class="content footer-tray">
+    <div>
+      Except as otherwise noted, this work is licensed under a Creative Commons
+      Attribution 4.0 International License, and code samples are licensed under
+      the BSD License.
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://docs.flutter.dev/tos">Terms</a></li>
+        <li>
+          <a href="https://policies.google.com/privacy?hl=en" target="_blank"
+            >Privacy</a
+          >
+        </li>
+        <li><a href="https://docs.flutter.dev/security">Security</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js"
+    data-glue-cookie-notification-bar-category="2A"
+    data-glue-cookie-notification-bar-site-id="flutter.dev"
+    ></script> 
+
+    
+    <section class="cookie-snack" x-data="Snack" x-bind:class="{ 'show': !agreed && window.location.href.includes('consultants') }">
+    <div class="container">
+      <p>NOTICE: Flutter hopes this directory is useful for customers seeking consultants with Flutter experience; however, Flutter makes no representation to you or anyone else that the listed consultants are Flutter or Google partners, and Flutter does not represent or warrant their qualifications or the quality of services you may receive.  Your relationship is strictly between you and the consultants.</p>
+      <button @click.prevent="dismiss" class="solid">Okay</button>
+    </div>
+  </section>
+  
+
+    
+    <script src="https://storage.googleapis.com/cms-storage-bucket/main.ce9ccc9c4873b0fef100.js"></script>
+    
+
+  </body>
+</html>

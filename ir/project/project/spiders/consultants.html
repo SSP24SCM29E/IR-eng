@@ -1,0 +1,1492 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png" />
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png" />
+
+    <title>
+      
+        
+          
+        
+      
+      
+        Flutter | Consultants
+      
+    </title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="description" content="Agencies designing and developing successful Flutter apps"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@flutterdev">
+
+    <meta property="og:title" content="Flutter | Consultants">
+    <meta property="og:url" content="//flutter.dev/consultants/">
+    <meta property="og:description" content="Agencies designing and developing successful Flutter apps">
+    <meta property="og:image" content="https://storage.googleapis.com/cms-storage-bucket/70760bf1e88b184bb1bc.png">
+
+    
+      <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4" />
+      <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-ND4LWWZ');
+      </script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-67589403-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css" rel="stylesheet">
+
+    
+      <link href="https://storage.googleapis.com/cms-storage-bucket/main.6356cd07f2051cc4a8a7.css" rel="stylesheet" media="all">
+        
+
+    
+
+    <script async defer src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" 
+            data-auto-replace-svg="nest"></script>
+  </head>
+  <body 
+    class="interior partner"
+    x-data="ScrollSpy"
+    x-on:scroll.window="onScroll"
+    x-bind:class="{ 'in-content': $store.spy.inContent }">
+    
+    
+    
+
+<header
+  role="banner"
+  x-data="Header()"
+  x-bind:class="{
+    'hide': !navOpen && $store.spy.inHomeHero,
+    'mobile': isMobile, 
+    'mobile-nav-open': navOpen, 
+    'searching': searchActive,
+    'header-dark': window.location.href.includes('games'),
+    'header-light': window.location.href.indexOf('games') === -1,
+  }"
+  x-on:resize.window.debounce.200="onResize"
+>
+  <div class="content" x-data="{ darkMode: window.location.href.includes('games') }">
+    <div>
+      <div class="logo logo-white">
+        <a href="/">
+          <img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg" alt="Flutter" />
+        </a>
+      </div>
+      <div class="logo logo-normal">
+        <a href="/">
+          <img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" alt="Flutter" x-show="!darkMode"/>
+          <img src="https://storage.googleapis.com/cms-storage-bucket/1870bdaf4a9523a10d5b.svg" alt="Flutter" x-show="darkMode"/>
+        </a>
+      </div>
+    </div>
+    <div class="tray">
+      <nav role="navigation">
+        <ul>
+          <li>
+            <a
+              href="/multi-platform"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Multi-Platform <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/multi-platform">Overview</a>
+                </li>
+                <li>
+                  <a class="btn" href="/multi-platform/mobile">Mobile</a>
+                  <ul>
+                    <li>
+                      <a class="btn subMenu" href="/multi-platform/ios">Flutter on iOS</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a class="btn" href="/multi-platform/web">Web</a></li>
+                <li>
+                  <a class="btn" href="/multi-platform/desktop">Desktop</a>
+                </li>
+                <li>
+                  <a class="btn" href="/multi-platform/embedded">Embedded</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+              href="/development"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Development <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/development">Overview</a>
+                </li>
+                <li><a class="btn" href="/learn">Learn</a></li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/packages-and-plugins/favorites"
+                    target="_blank"
+                    >Flutter Favorites</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://pub.dev" target="_blank"
+                    >Packages</a
+                  >
+                </li>
+                <li><a class="btn" href="/monetization">Monetization</a></li>
+                <li><a class="btn" href="/games">Games</a></li>
+                <li><a class="btn" href="/news">News</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a
+              href="/ecosystem"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Ecosystem <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="/ecosystem">Overview</a>
+                </li>
+                <li><a class="btn" href="/community">Community</a></li>
+                <li><a class="btn" href="/events">Events</a></li>
+                <li><a class="btn" href="/culture">Culture</a></li>
+                <li><a class="btn" href="/consultants">Consultants</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/showcase" class="btn top-level"> Showcase </a>
+          </li>
+          <li>
+            <a
+              href="https://docs.flutter.dev"
+              class="btn top-level"
+              @click="handleMobileClick($event)"
+            >
+              Docs <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="dd-connector"></div>
+            <div class="dd dd-double">
+              <ul>
+                <li class="mobile-only">
+                  <a class="btn" href="https://docs.flutter.dev">Overview</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/whats-new">What's new</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/get-started/editor"
+                    >Editor support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/tools/hot-reload"
+                    >Hot reload</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/perf/ui-performance"
+                    >Profiling</a
+                  >
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/get-started/install"
+                    >Install Flutter</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="btn"
+                    href="https://docs.flutter.dev/development/tools/devtools/overview"
+                    >DevTools</a
+                  >
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/cookbook">Cookbook</a>
+                </li>
+                <li>
+                  <a class="btn" href="https://docs.flutter.dev/reference/tutorials"
+                    >Tutorials</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="icon-btn search"
+        x-bind:class="{ 'active': searchActive || navOpen }"
+      >
+        <i class="fas fa-search search-icon" @click="toggleSearch($event)" x-show="!darkMode"> </i>
+        <i class="fas fa-search search-icon" style="color: #f8f9fa;" @click="toggleSearch($event)" x-show="darkMode"> </i>
+        <form action="https://docs.flutter.dev/search">
+          <input
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+            name="q"
+            id="q"
+            autocomplete="off"
+          />
+        </form>
+        <i
+          class="fas fa-times"
+          @click="toggleSearch($event)"
+          x-show="searchActive"
+        >
+        </i>
+      </div>
+
+      <a
+        href="https://docs.flutter.dev/get-started/install"
+        id="get-started__header"
+        class="btn"
+        >Get started</a
+      >
+
+      <a
+        href="https://io.google/2024/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=&utm_content="
+        id="global-gamers-challenge__header"
+        target="_blank"
+        class="btn"
+        >Register for Google I/O 2024</a
+      >
+
+      <div
+        class="icon-btn hamburger"
+        x-show="!navOpen"
+        @click="toggleMobileNav"
+      >
+        <i class="fas fa-bars fa-lg" aria-hidden="true" x-show="!darkMode"></i>
+        <i class="fas fa-bars fa-lg" style="color: #f8f9fa;" aria-hidden="true" x-show="darkMode"></i>
+      </div>
+      <div class="icon-btn close" x-show="navOpen" @click="toggleMobileNav">
+        <i class="fas fa-times fa-lg"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <main>
+      
+      
+
+<section class="hero">
+  <div class="container">
+    <div class="mantle">
+      <div class="text">
+        <hgroup>
+          <h1>Flutter Consultants</h1>
+          <h2>Consultancies designing and building successful Flutter applications.</h2>
+        </hgroup>
+        <div>
+          <a class="btn primary" href="https://docs.google.com/forms/d/1CS1Ysbwyeya4o0kzu1acPFie8ozHrUgEmAK4kx0_MZM/edit?usp=drive_open&resourcekey=0-Qi5RvEWxp_WT86zHombxgg">Become a Flutter Consultant</a>
+        </div>
+      </div>
+      <div class="media">
+        <img src="https://storage.googleapis.com/cms-storage-bucket/533c7d4eff51dd0904e7.png" alt="Implementation Consultants">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section 
+  class="content-container" 
+  x-data="initSpy(headerOffset, toggleContentActive)">
+  
+  <section id="stories" class="module" x-data="PartnersFilters">
+    <div class="container story-grid" x-data="{ shownPartnersCount: 9 }">
+      
+      
+      <div class="stories-header">
+        
+
+<div
+  class="dropdown"
+  x-data="PartnersFiltersDropdown"
+  x-on:resize.window.debounce.200="onResize"
+>
+  <button
+    class="btn top-level filters-dropdown__button"
+    :class="{ 'mobile-button': isMobile, 'primary': filtersCount > 0}"
+    @click="toggleDropdown()"
+  >
+    Filters <div x-show="filtersCount > 0">(<span x-text="filtersCount"></span>)</div> <i x-show="filtersCount == 0" class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div
+    :class="{ 'show': isOpen, 'mobile-open': isMobile && isOpen }"
+    class="filters-dropdown-content"
+    x-show="isOpen"
+    @click.outside="toggleDropdown()"
+  >
+    <div class="filters-dropdown__mobile-header" :class="{ 'show': isMobile }">
+      <span>Filters</span>
+      <span @click="toggleDropdown()">
+        <i class="fa-solid fa-xmark fa-xl"></i>
+      </span>
+    </div>
+    <div class="filters-dropdown__filters-container">
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['Location'] }" @click="onClickMobileDropdown($event, 'Location')">
+          Company Location
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['Location']}">
+          <label for="location-africa">
+            <input
+              id="location-africa"
+              type="checkbox"
+              value="Africa"
+              :checked="selectedFilters.locations['Africa']"
+              x-model="selectedFilters.locations['Africa']"
+            />
+            Africa
+          </label>
+          <label for="location-asia">
+            <input
+              id="location-asia"
+              type="checkbox"
+              value="Asia"
+              :checked="selectedFilters.locations['Asia']"
+              x-model="selectedFilters.locations['Asia']"
+            />
+            Asia
+          </label>
+          <label for="location-europe">
+            <input
+              id="location-europe"
+              type="checkbox"
+              value="Europe"
+              :checked="selectedFilters.locations['Europe']"
+              x-model="selectedFilters.locations['Europe']"
+            />
+            Europe
+          </label>
+          <label for="location-north-america">
+            <input
+              id="location-north-america"
+              type="checkbox"
+              value="North America"
+              :checked="selectedFilters.locations['North America']"
+              x-model="selectedFilters.locations['North America']"
+            />
+            North America
+          </label>
+          <label for="location-oceania">
+            <input
+              id="location-oceania"
+              type="checkbox"
+              value="Oceania"
+              :checked="selectedFilters.locations['Oceania']"
+              x-model="selectedFilters.locations['Oceania']"
+            />
+            Oceania
+          </label>
+          <label for="location-south-america">
+            <input
+              id="location-south-america"
+              type="checkbox"
+              value="South America"
+              :checked="selectedFilters.locations['South America']"
+              x-model="selectedFilters.locations['South America']"
+            />
+            South America
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['Size'] }" @click="onClickMobileDropdown($event, 'Size')">
+          Customer Size
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['Size'] }">
+          <label for="size-startups">
+            <input
+              id="size-startups"
+              type="checkbox"
+              value="Startups"
+              :checked="selectedFilters.sizes['Startup']"
+              x-model="selectedFilters.sizes['Startup']"
+            />
+            Startups
+          </label>
+          <label for="size-small-to-medium">
+            <input
+              id="size-small-to-medium"
+              type="checkbox"
+              value="Small-to-medium business"
+              :checked="selectedFilters.sizes['Small-to-medium Business']"
+              x-model="selectedFilters.sizes['Small-to-medium Business']"
+            />
+            Small-to-medium Businesses
+          </label>
+          <label for="size-enterprise">
+            <input
+              id="size-enterprise"
+              type="checkbox"
+              value="Enterprise"
+              :checked="selectedFilters.sizes['Enterprise']"
+              x-model="selectedFilters.sizes['Enterprise']"
+            />
+            Enterprises
+          </label>
+          <label for="sizes-all-of-the-above">
+            <input
+              id="sizes-all-of-the-above"
+              type="checkbox"
+              value="All of the above"
+              :checked="allSizesSelected(
+                selectedFilters.sizes['Startup'],
+                selectedFilters.sizes['Small-to-medium Business'],
+                selectedFilters.sizes['Enterprise']
+              )"
+              @click="toggleAllSizes"
+            />
+            All of the above
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+      <div>
+        <span class="filter-title" :class="{ 'selected': openedMobileDropdowns['GCP Partner'] }" @click="onClickMobileDropdown($event, 'GCP Partner')">
+          Is GCP Partner?
+          <i class="fa-solid fa-chevron-down"></i>
+        </span>
+        <div class="filters-dropdown__checkbox-container" :class="{ 'show': openedMobileDropdowns['GCP Partner']}" >
+          <label for="gcp-partner-yes">
+            <input
+              id="gcp-partner-yes"
+              type="checkbox"
+              value="Yes"
+              :checked="selectedFilters.GCPPartner['Yes']"
+              x-model="selectedFilters.GCPPartner['Yes']"
+            />
+            Yes
+          </label>
+          <label for="gcp-partner-no">
+            <input
+              id="gcp-partner-no"
+              type="checkbox"
+              value="No"
+              :checked="selectedFilters.GCPPartner['No']"
+              x-model="selectedFilters.GCPPartner['No']"
+            />
+            No
+          </label>
+        </div>
+      </div>
+      <span class="separator"></span>
+    </div>
+    <div class="filters-dropdown__buttons-container">
+      <button
+        class="btn filters-dropdown__clear-all-button"
+        @click="clearAllFilters()"
+      >
+        Clear All
+      </button>
+      <button class="btn" @click="applyFilters()">Apply</button>
+    </div>
+  </div>
+</div>
+
+      </div> 
+      <div class="story-grid-items">
+        <template x-for="(item, index) in filteredPartners([{&#x27;title&#x27;: &#x27;Very Good Ventures&#x27;, &#x27;summary&#x27;: &#x27;VGV is a full service consultancy that works with the biggest enterprises and the most impactful startups to design, build, and scale successful software experiences. As early pioneers and world leaders in Flutter, VGV helps its clients do more with the resources available, reach any screen from a single codebase, and implement best practices for long-term growth.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/VGV.png&#x27;, &#x27;external_url&#x27;: &#x27;https://verygood.ventures/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;gskinner.com&#x27;, &#x27;summary&#x27;: &#x27;We collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/GSkinner.png&#x27;, &#x27;external_url&#x27;: &#x27;https://flutter.gskinner.com/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;IBM&#x27;, &#x27;summary&#x27;: &#x27;IBM iX is your global experience and mobile design partner within IBM. Working at the intersection of business, design and technology, we help the world’s most influential companies create experiences that reinvent their relationships with customers and employees. With capabilities spanning strategy, design, development and operations across a global network of 60 studios, our human-centered approach helps accelerate innovation at scale.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/IBM_2.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ibm.com/consulting/ibmix?lnk=flatitem&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Accenture&#x27;, &#x27;summary&#x27;: &#x27;Accenture is a global professional services company that helps the world’s leading businesses, governments and other organizations build their digital core, optimize their operations, accelerate revenue growth and enhance citizen services—creating tangible value at speed and scale. We are a talent and innovation led company with 732,000 people serving clients in more than 120 countries.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Accenture.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.accenture.com/us-en/services/software-platforms/accenture-google-cloud-business-group&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Baseflow&#x27;, &#x27;summary&#x27;: &#x27;Engineering the Future of Software development. Together with exceptional people, strategy, and design, we create software for every challenge.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Baseflow.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.baseflow.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;NEON Software Solutions&#x27;, &#x27;summary&#x27;: &quot;NEON is an Berlin based app consultancy with a team of over 20 ecosystem experts. We&#x27;ve guided over 60 Companies, across all sizes, through the journey of creating a successful app business. Our portfolio contains a few of the largest media houses in Germany and striving startups alike.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/NEON.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.neon.dev/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Somnio&#x27;, &#x27;summary&#x27;: &#x27;Somnio Software is a Flutter Development Company specializing in developing multiplatform digital solutions. We offer nearshore services for Full Product Development &amp; Staff Augmentation.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Somnio.png&#x27;, &#x27;external_url&#x27;: &#x27;https://somniosoftware.com/why-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;South America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;BAM&#x27;, &#x27;summary&#x27;: &#x27;Mobile apps people love. Design and development of custom mobile applications.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Bam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.bam.tech/en/expertise/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;L+R&#x27;, &#x27;summary&#x27;: &#x27;L+R is an international Design and Technology Studio and boutique Strategy Consulting Firm. Maximizing utility with the balance of Strategy + Aesthetics.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/LR.png&#x27;, &#x27;external_url&#x27;: &#x27;https://levinriegner.com/integrated-offering/flutter-development&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;LeanCode&#x27;, &#x27;summary&#x27;: &#x27;We consult, design and build great products using Flutter for scales-ups and enterprises with the shortest possible time-to-market.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Lean_Code.png&#x27;, &#x27;external_url&#x27;: &#x27;https://leancode.co/technologies/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Superformula Corporation&#x27;, &#x27;summary&#x27;: &#x27;We are digital experts driven by the passion needed to accelerate and transform your business.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Superformula_1.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.superformula.com/services/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;glueglue&#x27;, &#x27;summary&#x27;: &quot;We are a digital product agency specializing in turning the most complex and ambitious ideas into web and mobile apps that are not only beautiful but also incredibly user-friendly. Our mission is to create digital products that enhance people&#x27;s lives. Our approach is straightforward and effective. We design solutions based on real needs and behaviors of individuals.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/glueglue.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.glueglue.com/en/services/sviluppo-applicazioni-web-e-mobile-native-con-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Solid Software&#x27;, &#x27;summary&#x27;: &#x27;We build secure, complex, and well-designed Flutter mobile and web applications. Flutter Early Adopters from 2018.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Solid.png&#x27;, &#x27;external_url&#x27;: &#x27;https://solid.software&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Codigee&#x27;, &#x27;summary&#x27;: &quot;With us, your app development is in daring hands. Don&#x27;t worry, we&#x27;ve got this! Expect excellence.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Frame_18.png&#x27;, &#x27;external_url&#x27;: &#x27;https://codigee.com/services&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Walturn&#x27;, &#x27;summary&#x27;: &#x27;At Walturn our mission is to make technology more accessible for young startups in the impact driven space to help them build faster and efficiently using Flutter.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Walturn.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.walturn.com/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Miquido&#x27;, &#x27;summary&#x27;: &#x27;Miquido is a full-service software development company that enables industry leaders to tackle business challenges with 360° digital acceleration services: Cross-Platform Web &amp; Mobile Development, AI Consultancy, Product Design and Strategy.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Miquido.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.miquido.com/flutter-development-company/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Sunflower Lab&#x27;, &#x27;summary&#x27;: &#x27;Sunflower Lab is a mobile app development company delivering cutting-edge, enterprise-grade mobile applications for Android and iPhone.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Sunflower_Lab.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.thesunflowerlab.com/hire-flutter-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Dribba&#x27;, &#x27;summary&#x27;: &#x27;Dribba is a Barcelona-based mobile technology consultant specializing in user-centric, high-quality software products developed with Flutter. We have been partnering with brands and startups since 2012 to digitalize their workflows and create impactful products.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/dribba.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.dribba.com/desarrollo-apps-flutter-barcelona&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Arch&#x27;, &#x27;summary&#x27;: &#x27;Since our founding in 2005, we have built a reputation for designing and developing high quality, innovative software for startups and established brands that offer their end-users the best possible experience.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Arch.png&#x27;, &#x27;external_url&#x27;: &#x27;https://wearearch.com/services-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Hedgehog Lab&#x27;, &#x27;summary&#x27;: &#x27;Hedgehog lab is a human-centered global tech consultancy. Our experts in UXR, UI/UX, engineering, cloud, &amp; data science partner to deliver custom app development and digital transformation services. With 15+ years experience, our team have worked for industry leaders including AJ Bell, Deliveroo, Kodak Alaris and Tesco Bank. Our labs are located in Newcastle Upon Tyne, York, Boston and Sofia.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Hedgehog_Lab.png&#x27;, &#x27;external_url&#x27;: &#x27;https://netsells.co.uk/services/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Infinum&#x27;, &#x27;summary&#x27;: &#x27;Infinum delivers high-end digital solutions to global clients ranging from venture backed start-ups to global enterprises across various industry verticals. We define, design, build, and scale products for mobile and web that grow businesses and empower people.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Infinum.png&#x27;, &#x27;external_url&#x27;: &#x27;https://infinum.com/services/engineering/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;PHNTM&#x27;, &#x27;summary&#x27;: &#x27;We help established corporations to build digital, multi-platform apps. We turn your idea into a real product.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/phntm.png&#x27;, &#x27;external_url&#x27;: &#x27;https://phntm.xyz/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Bottle Rocket&#x27;, &#x27;summary&#x27;: &#x27;Bottle Rocket is a digital experience consultancy that provides strategy, product, design, and technology services that drive business results and exceed customer expectations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Bottle_Rocket.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.bottlerocketstudios.com/expertise/build/app-development/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Rebel App Studio&#x27;, &#x27;summary&#x27;: &#x27;Rebel App Studio by Codemate is a prominent Flutter Consultancy company.  Currently, we are collaborating with renowned brands such as Burger King and Taco Bell to develop top-tier applications. As a Nordic Creative Tech agency, we are equipped with a team of 100 world-class senior software developers and designers. Our clientele includes prestigious names like Netflix, Singapore Airlines, and Google.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Rebel_App_Studio.png&#x27;, &#x27;external_url&#x27;: &#x27;https://rebelappstudio.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Zero One Group&#x27;, &#x27;summary&#x27;: &#x27;We empower companies through expertise, precision and passion in software development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ZeroOneGroup.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.zero-one-technology.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Krootl&#x27;, &#x27;summary&#x27;: &#x27;Krootl is a full-cycle Flutter app development agency with a primary focus on creating digital solutions for the healthcare, financial, wellness, and retail industries.  We design, develop, and launch web and mobile apps that reflect business needs and generate revenue.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Krootl.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.krootl.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Antino&#x27;, &#x27;summary&#x27;: &#x27;We are product development and digital transformation company, united with the mission: to transform.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Antino.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.antino.com/mobile-app-development-company&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Snapp X&#x27;, &#x27;summary&#x27;: &quot;We understand the importance of speed in today&#x27;s digital world and develop engaging apps for any screen.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/SnappX.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.snappx.io&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Chili Labs&#x27;, &#x27;summary&#x27;: &quot;We&#x27;ve made mobile apps for the past 7 years, with Flutter, Kotlin and SwiftUI. We have a team of 25 mobile developers located in Riga, Latvia.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Chili.png&#x27;, &#x27;external_url&#x27;: &#x27;https://chililabs.io/services/development/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Singular Agency&#x27;, &#x27;summary&#x27;: &#x27;At Singular, we combine design thinking with the power of Flutter and FlutterFlow to architect more than just apps; we create transformative digital experiences. Our specialized focus serves American businesses, delivering innovation, agility, and a strong focus on business value.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Singular_design.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.singular.design/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;iteo&#x27;, &#x27;summary&#x27;: &#x27;iteo is an international digital product studio founded in Poland. We offer business, technical and creative services to deliver digital products and experiences at scale. Our 12 years experience allows us to reveal the true digital potential of business models and drive digital transformation from within organizations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Iteo.png&#x27;, &#x27;external_url&#x27;: &#x27;https://iteo.com/competences/mobile/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;OTAKOYI&#x27;, &#x27;summary&#x27;: &#x27;For over the decade OTAKOYI designs and builds software products for Startups, Scaleups, and Industry Giants worldwide. Our main goal is to help businesses succeed by delivering digital products of world-class standard, made up by the best engineering teams from Eastern Europe.  We are proud of being trusted by more than 150 companies from different parts of the world.   We are not just one more outsourcing company, but a trusted technical partner who you can rely on.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/-_Eugene_Martseniuk.png&#x27;, &#x27;external_url&#x27;: &#x27;https://otakoyi.software/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;SolGuruz&#x27;, &#x27;summary&#x27;: &quot;SolGuruz is a full-stack web and app development agency. At SolGuruz, we are committed to providing our clients with high-quality software solutions tailored to their needs. We work closely with our clients to understand their business requirements and provide customized solutions that help them achieve their objectives. Our team is passionate about what we do, and we strive to exceed our client&#x27;s expectations in every project we undertake.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/SolGoruz.png&#x27;, &#x27;external_url&#x27;: &#x27;https://solguruz.com/services/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Apexive&#x27;, &#x27;summary&#x27;: &#x27;Top-notch software development for startups. In weeks, not months.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Saiful_Islam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://apexive.com&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Ergosign&#x27;, &#x27;summary&#x27;: &#x27;Ergosign is a digital agency focusing on user experience. We design products and services that support people in their work and enrich their lives. With a full service approach, we employ a human-centered, goal-oriented and collaborative mindset.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ergosign.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ergosign.de/en/services/flutter.html&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;AppTube&#x27;, &#x27;summary&#x27;: &quot;We&#x27;re an expert Flutter development company creating custom apps for businesses and professionals worldwide. Our AppTube team consults with you on the product specifics to ensure we comprehend how to unleash your brand identity and reach your objectives.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/apptube.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.apptube.org&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Zühlke Engineering AG&#x27;, &#x27;summary&#x27;: &#x27;Zühlke is a global innovation service provider. We empower ideas and create new business models by developing services and products based on new technologies – from initial vision through development, deployment, production, and beyond.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Zuhlke.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.zuehlke.com/en/expertise/digital-experience&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &quot;Unlock&#x27;d&quot;, &#x27;summary&#x27;: &quot;Unlock&#x27;d specialises in &#x27;all screen applications&#x27;. With the power of Dart &amp; Flutter we develop for any screen. With our clients we aim to create business value by releasing new software versions in short iterations.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Unlockd.png&#x27;, &#x27;external_url&#x27;: &#x27;http://www.unlockd.be&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Appventurez Mobitech Pvt Ltd&#x27;, &#x27;summary&#x27;: &#x27;We provide powerful product development solutions blended with state of-the-art technology to transform ideas into legacies. Redefining product development with agile services, a customer-first approach, and on-time delivery mechanisms across industries. We transform ideas into realities by providing end-to-end product development solutions from strategizing to production.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Appventurez.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.appventurez.com/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;XAM Consulting&#x27;, &#x27;summary&#x27;: &quot;XAM exists to make people&#x27;s lives better by solving real problems through intelligent application of technology&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Xam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://xam.com.au/services/flutter-app-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;FiveDotTwelve&#x27;, &#x27;summary&#x27;: &#x27;FiveDotTwelve is an app development company focusing on close cooperation with clients and individual approach to every project. We are passionate about delivering the highest quality products to our clients. We work hard to understand your business needs and then rapidly develop and implement fit-for-purpose solutions.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/FiveDotTwelve.png&#x27;, &#x27;external_url&#x27;: &#x27;https://fivedottwelve.com/services/mobile-app-development/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;NextApps&#x27;, &#x27;summary&#x27;: &#x27;NextApps - A good app solves the problem.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Next_Apps_-_Lukasz_Lojerczuk.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.nextapps.co/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Atomic Robot&#x27;, &#x27;summary&#x27;: &quot;Atomic Robot is a mobile app design and development agency headquartered in Cincinnati.  We&#x27;ve helped companies from startups to enterprise bring exceptional mobile apps to market.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/atomic_robot.png&#x27;, &#x27;external_url&#x27;: &#x27;https://atomicrobot.com/services/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Never Inc.&#x27;, &#x27;summary&#x27;: &#x27;We aim to create a new world and a better future through application development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Shohei_Nakagawa.png&#x27;, &#x27;external_url&#x27;: &#x27;https://neverjp.com/contact/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Code Heroes&#x27;, &#x27;summary&#x27;: &#x27;Code Heroes is a Queensland based software development agency that specialise in designing and developing applications with Flutter. Since 2011 Code Heroes have a history of delivering bespoke, business-critical applications to clients across Australia, most recently developing the QLD Digital License application for the Department of Transport and Main Roads. The Code Heroes team are located in Queensland, Australia and service clients in APAC.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Codeheroes.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.codeheroes.com.au/flutter-developers-australia&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Innoventix Solutions&#x27;, &#x27;summary&#x27;: &#x27;We are a Flutter exclusive mobile app development and Microsoft 365 cloud solutions agency. We help small, medium and enterprise businesses to bring their business process ideas to mobile first apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Innoventix.png&#x27;, &#x27;external_url&#x27;: &#x27;https://innoventixsolutions.com/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;This Might Work&#x27;, &#x27;summary&#x27;: &#x27;As a Digital Product Studio, we partner with startups and brands to transform bold ideas into digital products and services.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ThisMightWork.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.thismightwork.co/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Apparence.io&#x27;, &#x27;summary&#x27;: &#x27;We are a small studio providing quality apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/apparence_logo_-_Gautier_Siclon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.apparence.io/agence-developpement-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Saurabh Infosys&#x27;, &#x27;summary&#x27;: &#x27;Team of 22 developers providing complete soutions for mobile and web development. Our main focus is on Flutter and backend services like Firebase, PHP,  Supabase, and NodeJS.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Saurabh_Infosys.png&#x27;, &#x27;external_url&#x27;: &#x27;https://saurabhinfosys.com/Flutter-development&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;theTribe&#x27;, &#x27;summary&#x27;: &quot;We&#x27;re building apps like a design studio, where the user is in the center of our approach to make sure we reach your target with success once the app&#x27;s published.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/The_Tribe.png&#x27;, &#x27;external_url&#x27;: &#x27;https://thetribe.io/metier-flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;FF.Next&#x27;, &#x27;summary&#x27;: &#x27;We are a digital product design agency creating beautifully-crafted &amp; highly functional mobile and web applications in more than 20 countries. We’ve been creating &amp; implementing design-driven mobile banking products from Singapore through Central-Eastern Europe to the UK already for 10+ banks and 20+ fintechs in the past 5 years.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ff.next.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ffnext.io/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Paulonia&#x27;, &#x27;summary&#x27;: &#x27;We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Paulonia.png&#x27;, &#x27;external_url&#x27;: &#x27;https://paulonia.dev/development&#x27;, &#x27;options_location&#x27;: [&#x27;South America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;DiUS&#x27;, &#x27;summary&#x27;: &#x27;DiUS is a technology consultancy with leading capabilities in digital transformation and product development. Our team across Australia and New Zealand leverage specialist expertise in cloud, data, application development, mobile, experience design, IoT and machine learning.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Dius.png&#x27;, &#x27;external_url&#x27;: &#x27;https://dius.com.au/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;icapps&#x27;, &#x27;summary&#x27;: &#x27;icapps is a digital product agency that started with the first Belgian made iOS apps and quickly grew into a company that covers all your custom software needs from strategy, design to development. icapps aims to be at the forefront in everything Flutter in Belgium.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/William_Verhaeghe.png&#x27;, &#x27;external_url&#x27;: &#x27;https://icapps.com/development/mobile/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Nomtek&#x27;, &#x27;summary&#x27;: &#x27;Nomtek is a software development agency delivering impactful mobile and XR apps for change makers. We leverage 14 years of experience to build digital products that people love to use.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Marcin_Durawa.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.nomtek.com/mobile-development/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;80bucks - The App Company&#x27;, &#x27;summary&#x27;: &#x27;At 80bucks, our mission is to create apps that users truly love, with engagement and great design always on top of our minds.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/80_bucks.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.80bucks.co/en/flutter-apps&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;F22 Labs&#x27;, &#x27;summary&#x27;: &quot;We are a product design and development studio empowering businesses with cutting-edge, high-impact software solutions that fuel growth and drive success. Whether it&#x27;s healthcare, finance, retail, or any other sector, we have led numerous digital transformations. If you have a problem, we would love to learn more and assist you in finding a solution.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/f22_labs.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.f22labs.com/flutter-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Nyoka&#x27;, &#x27;summary&#x27;: &#x27;For us, the creation of digital products is not only about intelligent code or creative design. This is a real partnership between ideologists and innovators. Our cooperation is based on transparency, communication, professional project management, and attention to detail.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Nyoka.png&#x27;, &#x27;external_url&#x27;: &#x27;https://nyoka-flutter.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Applover&#x27;, &#x27;summary&#x27;: &#x27;You have a wonderful idea but lack the technology knowledge to make it a reality? With over 140 experienced software developers, we can estimate your project, conduct a technical workshop for your team, and eventually build your digital product from scratch, in time for release.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/App_lover.png&#x27;, &#x27;external_url&#x27;: &#x27;https://applover.com/services/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Approachable Geek&#x27;, &#x27;summary&#x27;: &quot;Whether you are looking to improve your company&#x27;s internal processes, or have a million-dollar app idea, we are the Approachable Geeks you have been looking for. We&#x27;re Approachable (easy to talk to) and Geeks (technically proficient), and the combination of those means that you get clear communication throughout the process and killer code.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/approachable_geek_-_Garrett_Barlocker.png&#x27;, &#x27;external_url&#x27;: &#x27;https://approachablegeek.com/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Indus Net Technologies&#x27;, &#x27;summary&#x27;: &#x27;INT. (Indus Net Technologies) is a full-stack software engineering solutions company with a pioneering legacy spanning 25 years, over 500 clients and 11,000 plus client projects. Over the years it has built industry recognition as an innovator and a strategic digital partner championing the cause of human-centric and outcome-driven solution offerings. INT. has a dedicated and niche focus on banking, insurance, financial services, pharmaceuticals and healthcare industries.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Int.png&#x27;, &#x27;external_url&#x27;: &#x27;https://indusnet.zoholandingpage.in/INT-Flutterdevelopment&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Infotop Solutions&#x27;, &#x27;summary&#x27;: &#x27;Infotop solutions is software development company working in web and mobile app development. We have 7+ years of experience in mobile and app development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Fast_live_line.png&#x27;, &#x27;external_url&#x27;: &#x27;https://infotopsolutions.com/app-development/hybrid-app-development-flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Loomery&#x27;, &#x27;summary&#x27;: &quot;Loomery is a team of makers who partner with you to learn at pace, launch with impact and lead your organisation forward. Our making-led strategic approaches deliver solutions to help your organisation go further and accelerate towards your product future in days or weeks, not months or years. We&#x27;re cross-platform advocates who have spent the last four years putting Flutter through its paces.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Loomery.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.loomery.com/loomery-x-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Reactree&#x27;, &#x27;summary&#x27;: &#x27;Reactree is a rapidly growing technology company that empowers people to believe that sky is indeed the limit.  We craft attractive mobile &amp; web app experiences driven by design, strategy and technology.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Reactree.png&#x27;, &#x27;external_url&#x27;: &#x27;https://reactree.com/flutter-development-services/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Netglade&#x27;, &#x27;summary&#x27;: &#x27;Netglade is a software agency specializing in Flutter app development. We create, maintain and improve apps that are used by over a million users every day.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Netglade.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.netglade.cz/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;GeekyAnts&#x27;, &#x27;summary&#x27;: &#x27;GeekyAnts provides end-to-end app development and consultation services. Powered by our passionate Flutter team, we solve problems for Small, Medium, and Enterprise companies. Our expertise is building custom internal software, B2B and B2C software, web and mobile applications, and MVPs.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/GeekyAnts.png&#x27;, &#x27;external_url&#x27;: &#x27;https://geekyants.com/hire-flutter-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Mokutan Technologies Ltd&#x27;, &#x27;summary&#x27;: &#x27;We are a UK based Flutter development agency. Specialising in building custom B2B SaaS and internal business applications.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Mokutan.png&#x27;, &#x27;external_url&#x27;: &#x27;http://www.mokutan.io/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;GITS.id&#x27;, &#x27;summary&#x27;: &#x27;We thrive to develop applications for good. To empower people, to increase productivity, to ease your daily life. Our applications are to get it simple.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/gits.id.png&#x27;, &#x27;external_url&#x27;: &#x27;https://gits.id/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Pentagon Co., Ltd.&#x27;, &#x27;summary&#x27;: &#x27;&quot;Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog.&quot;&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Pentagon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://pentagon.tokyo/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Supercharge&#x27;, &#x27;summary&#x27;: &#x27;At Supercharge, we are your innovation partner to turn disruption into opportunity. With our 200+ digital experts in London, New York, Helsinki, Amsterdam, Vienna, and Budapest, we work with our clients to create transformative digital solutions. We design, engineer, and scale digital products to make your business fit for the future.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Supercharge.png&#x27;, &#x27;external_url&#x27;: &#x27;https://insights.supercharge.io/book-tech-evaluation-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;ArcTouch&#x27;, &#x27;summary&#x27;: &#x27;ArcTouch creates lovable apps, websites, and digital experiences to help companies forge meaningful connections with their customers.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ArcTouch.png&#x27;, &#x27;external_url&#x27;: &#x27;https://arctouch.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;OakTree Apps&#x27;, &#x27;summary&#x27;: &#x27;OakTree Apps is a fully remote company that works with small and medium enterprises on greenfield projects using Flutter for mobile apps. We are a team of 23, 18 of them being engineers (11 for Flutter/mobile and 7 for backend technologies).&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Pratik_Khivesara.png&#x27;, &#x27;external_url&#x27;: &#x27;https://oaktreeapps.com/services/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Mr. Milu&#x27;, &#x27;summary&#x27;: &#x27;Independent Digital Agency with integral services: digital design, development, user experience, data analytics and digital marketing&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/mr_milu.png&#x27;, &#x27;external_url&#x27;: &#x27;https://mrmilu.com/en/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Ippon Technologies&#x27;, &#x27;summary&#x27;: &#x27;Ippon is a technology consulting and expertise firm. We support the digital transformation of companies, helping them to design their strategy and deploy their roadmap at scale.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Ippon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://fr.ippon.tech/expertises/expertise-mobile/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;In The Pocket&#x27;, &#x27;summary&#x27;: &#x27;In The Pocket is a digital product studio. We take you from ideation to a full-blown digital experience, ready to hit the market and create value for your business.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Inthepocket.png&#x27;, &#x27;external_url&#x27;: &#x27;https://tech.inthepocket.com/technology/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Plangora Limited&#x27;, &#x27;summary&#x27;: &#x27;Founded in 2016, Plangora is driven by a passion for harnessing the power of cutting-edge technology to deliver exceptional results for our clients. With a focus on custom-tailored solutions, we have successfully transformed the visions of over 100 companies into tangible products and comprehensive IT solutions within just 7 years.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Plangora.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.plangora.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;JIITAK Inc.&#x27;, &#x27;summary&#x27;: &#x27;Our company is a pioneering Flutter developer, harnessing its versatility to craft seamless applications across Android, iOS, web, Windows, MacOS, and iPad with a single codebase. Leveraging our proprietary frameworks and packages, we accelerate development, delivering unparalleled speed and user experiences indistinguishable from native apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Jiitaik.png&#x27;, &#x27;external_url&#x27;: &#x27;https://jiitak.jp/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}])">
+          <div class="story-item" x-show="index < shownPartnersCount">
+            <a :href="!! item.external_url ? item.external_url : '#'" target="_blank">
+            <img :src="item.card"></img>
+            <div class="text">
+              <h3 x-text="item.title"></h3>
+              <p x-text="item.summary"></p>
+            </div>
+            </a>
+          </div>
+        </template>
+      </div>
+      <button @click="shownPartnersCount+=9" class="btn" x-show="filteredPartners([{&#x27;title&#x27;: &#x27;Very Good Ventures&#x27;, &#x27;summary&#x27;: &#x27;VGV is a full service consultancy that works with the biggest enterprises and the most impactful startups to design, build, and scale successful software experiences. As early pioneers and world leaders in Flutter, VGV helps its clients do more with the resources available, reach any screen from a single codebase, and implement best practices for long-term growth.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/VGV.png&#x27;, &#x27;external_url&#x27;: &#x27;https://verygood.ventures/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;gskinner.com&#x27;, &#x27;summary&#x27;: &#x27;We collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/GSkinner.png&#x27;, &#x27;external_url&#x27;: &#x27;https://flutter.gskinner.com/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;IBM&#x27;, &#x27;summary&#x27;: &#x27;IBM iX is your global experience and mobile design partner within IBM. Working at the intersection of business, design and technology, we help the world’s most influential companies create experiences that reinvent their relationships with customers and employees. With capabilities spanning strategy, design, development and operations across a global network of 60 studios, our human-centered approach helps accelerate innovation at scale.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/IBM_2.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ibm.com/consulting/ibmix?lnk=flatitem&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Accenture&#x27;, &#x27;summary&#x27;: &#x27;Accenture is a global professional services company that helps the world’s leading businesses, governments and other organizations build their digital core, optimize their operations, accelerate revenue growth and enhance citizen services—creating tangible value at speed and scale. We are a talent and innovation led company with 732,000 people serving clients in more than 120 countries.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Accenture.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.accenture.com/us-en/services/software-platforms/accenture-google-cloud-business-group&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Baseflow&#x27;, &#x27;summary&#x27;: &#x27;Engineering the Future of Software development. Together with exceptional people, strategy, and design, we create software for every challenge.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Baseflow.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.baseflow.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;NEON Software Solutions&#x27;, &#x27;summary&#x27;: &quot;NEON is an Berlin based app consultancy with a team of over 20 ecosystem experts. We&#x27;ve guided over 60 Companies, across all sizes, through the journey of creating a successful app business. Our portfolio contains a few of the largest media houses in Germany and striving startups alike.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/NEON.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.neon.dev/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Somnio&#x27;, &#x27;summary&#x27;: &#x27;Somnio Software is a Flutter Development Company specializing in developing multiplatform digital solutions. We offer nearshore services for Full Product Development &amp; Staff Augmentation.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Somnio.png&#x27;, &#x27;external_url&#x27;: &#x27;https://somniosoftware.com/why-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;South America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;BAM&#x27;, &#x27;summary&#x27;: &#x27;Mobile apps people love. Design and development of custom mobile applications.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Bam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.bam.tech/en/expertise/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;L+R&#x27;, &#x27;summary&#x27;: &#x27;L+R is an international Design and Technology Studio and boutique Strategy Consulting Firm. Maximizing utility with the balance of Strategy + Aesthetics.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/LR.png&#x27;, &#x27;external_url&#x27;: &#x27;https://levinriegner.com/integrated-offering/flutter-development&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;LeanCode&#x27;, &#x27;summary&#x27;: &#x27;We consult, design and build great products using Flutter for scales-ups and enterprises with the shortest possible time-to-market.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Lean_Code.png&#x27;, &#x27;external_url&#x27;: &#x27;https://leancode.co/technologies/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Superformula Corporation&#x27;, &#x27;summary&#x27;: &#x27;We are digital experts driven by the passion needed to accelerate and transform your business.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Superformula_1.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.superformula.com/services/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;glueglue&#x27;, &#x27;summary&#x27;: &quot;We are a digital product agency specializing in turning the most complex and ambitious ideas into web and mobile apps that are not only beautiful but also incredibly user-friendly. Our mission is to create digital products that enhance people&#x27;s lives. Our approach is straightforward and effective. We design solutions based on real needs and behaviors of individuals.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/glueglue.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.glueglue.com/en/services/sviluppo-applicazioni-web-e-mobile-native-con-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Solid Software&#x27;, &#x27;summary&#x27;: &#x27;We build secure, complex, and well-designed Flutter mobile and web applications. Flutter Early Adopters from 2018.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Solid.png&#x27;, &#x27;external_url&#x27;: &#x27;https://solid.software&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Codigee&#x27;, &#x27;summary&#x27;: &quot;With us, your app development is in daring hands. Don&#x27;t worry, we&#x27;ve got this! Expect excellence.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Frame_18.png&#x27;, &#x27;external_url&#x27;: &#x27;https://codigee.com/services&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Walturn&#x27;, &#x27;summary&#x27;: &#x27;At Walturn our mission is to make technology more accessible for young startups in the impact driven space to help them build faster and efficiently using Flutter.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Walturn.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.walturn.com/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Miquido&#x27;, &#x27;summary&#x27;: &#x27;Miquido is a full-service software development company that enables industry leaders to tackle business challenges with 360° digital acceleration services: Cross-Platform Web &amp; Mobile Development, AI Consultancy, Product Design and Strategy.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Miquido.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.miquido.com/flutter-development-company/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Sunflower Lab&#x27;, &#x27;summary&#x27;: &#x27;Sunflower Lab is a mobile app development company delivering cutting-edge, enterprise-grade mobile applications for Android and iPhone.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Sunflower_Lab.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.thesunflowerlab.com/hire-flutter-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Dribba&#x27;, &#x27;summary&#x27;: &#x27;Dribba is a Barcelona-based mobile technology consultant specializing in user-centric, high-quality software products developed with Flutter. We have been partnering with brands and startups since 2012 to digitalize their workflows and create impactful products.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/dribba.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.dribba.com/desarrollo-apps-flutter-barcelona&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Arch&#x27;, &#x27;summary&#x27;: &#x27;Since our founding in 2005, we have built a reputation for designing and developing high quality, innovative software for startups and established brands that offer their end-users the best possible experience.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Arch.png&#x27;, &#x27;external_url&#x27;: &#x27;https://wearearch.com/services-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Hedgehog Lab&#x27;, &#x27;summary&#x27;: &#x27;Hedgehog lab is a human-centered global tech consultancy. Our experts in UXR, UI/UX, engineering, cloud, &amp; data science partner to deliver custom app development and digital transformation services. With 15+ years experience, our team have worked for industry leaders including AJ Bell, Deliveroo, Kodak Alaris and Tesco Bank. Our labs are located in Newcastle Upon Tyne, York, Boston and Sofia.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Hedgehog_Lab.png&#x27;, &#x27;external_url&#x27;: &#x27;https://netsells.co.uk/services/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Infinum&#x27;, &#x27;summary&#x27;: &#x27;Infinum delivers high-end digital solutions to global clients ranging from venture backed start-ups to global enterprises across various industry verticals. We define, design, build, and scale products for mobile and web that grow businesses and empower people.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Infinum.png&#x27;, &#x27;external_url&#x27;: &#x27;https://infinum.com/services/engineering/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;PHNTM&#x27;, &#x27;summary&#x27;: &#x27;We help established corporations to build digital, multi-platform apps. We turn your idea into a real product.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/phntm.png&#x27;, &#x27;external_url&#x27;: &#x27;https://phntm.xyz/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Bottle Rocket&#x27;, &#x27;summary&#x27;: &#x27;Bottle Rocket is a digital experience consultancy that provides strategy, product, design, and technology services that drive business results and exceed customer expectations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Bottle_Rocket.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.bottlerocketstudios.com/expertise/build/app-development/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Rebel App Studio&#x27;, &#x27;summary&#x27;: &#x27;Rebel App Studio by Codemate is a prominent Flutter Consultancy company.  Currently, we are collaborating with renowned brands such as Burger King and Taco Bell to develop top-tier applications. As a Nordic Creative Tech agency, we are equipped with a team of 100 world-class senior software developers and designers. Our clientele includes prestigious names like Netflix, Singapore Airlines, and Google.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Rebel_App_Studio.png&#x27;, &#x27;external_url&#x27;: &#x27;https://rebelappstudio.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Zero One Group&#x27;, &#x27;summary&#x27;: &#x27;We empower companies through expertise, precision and passion in software development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ZeroOneGroup.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.zero-one-technology.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Krootl&#x27;, &#x27;summary&#x27;: &#x27;Krootl is a full-cycle Flutter app development agency with a primary focus on creating digital solutions for the healthcare, financial, wellness, and retail industries.  We design, develop, and launch web and mobile apps that reflect business needs and generate revenue.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Krootl.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.krootl.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Antino&#x27;, &#x27;summary&#x27;: &#x27;We are product development and digital transformation company, united with the mission: to transform.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Antino.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.antino.com/mobile-app-development-company&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Snapp X&#x27;, &#x27;summary&#x27;: &quot;We understand the importance of speed in today&#x27;s digital world and develop engaging apps for any screen.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/SnappX.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.snappx.io&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Chili Labs&#x27;, &#x27;summary&#x27;: &quot;We&#x27;ve made mobile apps for the past 7 years, with Flutter, Kotlin and SwiftUI. We have a team of 25 mobile developers located in Riga, Latvia.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Chili.png&#x27;, &#x27;external_url&#x27;: &#x27;https://chililabs.io/services/development/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Singular Agency&#x27;, &#x27;summary&#x27;: &#x27;At Singular, we combine design thinking with the power of Flutter and FlutterFlow to architect more than just apps; we create transformative digital experiences. Our specialized focus serves American businesses, delivering innovation, agility, and a strong focus on business value.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Singular_design.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.singular.design/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;iteo&#x27;, &#x27;summary&#x27;: &#x27;iteo is an international digital product studio founded in Poland. We offer business, technical and creative services to deliver digital products and experiences at scale. Our 12 years experience allows us to reveal the true digital potential of business models and drive digital transformation from within organizations.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Iteo.png&#x27;, &#x27;external_url&#x27;: &#x27;https://iteo.com/competences/mobile/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;OTAKOYI&#x27;, &#x27;summary&#x27;: &#x27;For over the decade OTAKOYI designs and builds software products for Startups, Scaleups, and Industry Giants worldwide. Our main goal is to help businesses succeed by delivering digital products of world-class standard, made up by the best engineering teams from Eastern Europe.  We are proud of being trusted by more than 150 companies from different parts of the world.   We are not just one more outsourcing company, but a trusted technical partner who you can rely on.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/-_Eugene_Martseniuk.png&#x27;, &#x27;external_url&#x27;: &#x27;https://otakoyi.software/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;SolGuruz&#x27;, &#x27;summary&#x27;: &quot;SolGuruz is a full-stack web and app development agency. At SolGuruz, we are committed to providing our clients with high-quality software solutions tailored to their needs. We work closely with our clients to understand their business requirements and provide customized solutions that help them achieve their objectives. Our team is passionate about what we do, and we strive to exceed our client&#x27;s expectations in every project we undertake.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/SolGoruz.png&#x27;, &#x27;external_url&#x27;: &#x27;https://solguruz.com/services/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Apexive&#x27;, &#x27;summary&#x27;: &#x27;Top-notch software development for startups. In weeks, not months.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Saiful_Islam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://apexive.com&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Ergosign&#x27;, &#x27;summary&#x27;: &#x27;Ergosign is a digital agency focusing on user experience. We design products and services that support people in their work and enrich their lives. With a full service approach, we employ a human-centered, goal-oriented and collaborative mindset.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ergosign.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ergosign.de/en/services/flutter.html&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;AppTube&#x27;, &#x27;summary&#x27;: &quot;We&#x27;re an expert Flutter development company creating custom apps for businesses and professionals worldwide. Our AppTube team consults with you on the product specifics to ensure we comprehend how to unleash your brand identity and reach your objectives.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/apptube.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.apptube.org&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Zühlke Engineering AG&#x27;, &#x27;summary&#x27;: &#x27;Zühlke is a global innovation service provider. We empower ideas and create new business models by developing services and products based on new technologies – from initial vision through development, deployment, production, and beyond.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Zuhlke.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.zuehlke.com/en/expertise/digital-experience&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &quot;Unlock&#x27;d&quot;, &#x27;summary&#x27;: &quot;Unlock&#x27;d specialises in &#x27;all screen applications&#x27;. With the power of Dart &amp; Flutter we develop for any screen. With our clients we aim to create business value by releasing new software versions in short iterations.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Unlockd.png&#x27;, &#x27;external_url&#x27;: &#x27;http://www.unlockd.be&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Appventurez Mobitech Pvt Ltd&#x27;, &#x27;summary&#x27;: &#x27;We provide powerful product development solutions blended with state of-the-art technology to transform ideas into legacies. Redefining product development with agile services, a customer-first approach, and on-time delivery mechanisms across industries. We transform ideas into realities by providing end-to-end product development solutions from strategizing to production.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Appventurez.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.appventurez.com/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;XAM Consulting&#x27;, &#x27;summary&#x27;: &quot;XAM exists to make people&#x27;s lives better by solving real problems through intelligent application of technology&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Xam.png&#x27;, &#x27;external_url&#x27;: &#x27;https://xam.com.au/services/flutter-app-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;FiveDotTwelve&#x27;, &#x27;summary&#x27;: &#x27;FiveDotTwelve is an app development company focusing on close cooperation with clients and individual approach to every project. We are passionate about delivering the highest quality products to our clients. We work hard to understand your business needs and then rapidly develop and implement fit-for-purpose solutions.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/FiveDotTwelve.png&#x27;, &#x27;external_url&#x27;: &#x27;https://fivedottwelve.com/services/mobile-app-development/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;NextApps&#x27;, &#x27;summary&#x27;: &#x27;NextApps - A good app solves the problem.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Next_Apps_-_Lukasz_Lojerczuk.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.nextapps.co/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Atomic Robot&#x27;, &#x27;summary&#x27;: &quot;Atomic Robot is a mobile app design and development agency headquartered in Cincinnati.  We&#x27;ve helped companies from startups to enterprise bring exceptional mobile apps to market.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/atomic_robot.png&#x27;, &#x27;external_url&#x27;: &#x27;https://atomicrobot.com/services/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Never Inc.&#x27;, &#x27;summary&#x27;: &#x27;We aim to create a new world and a better future through application development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Shohei_Nakagawa.png&#x27;, &#x27;external_url&#x27;: &#x27;https://neverjp.com/contact/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Code Heroes&#x27;, &#x27;summary&#x27;: &#x27;Code Heroes is a Queensland based software development agency that specialise in designing and developing applications with Flutter. Since 2011 Code Heroes have a history of delivering bespoke, business-critical applications to clients across Australia, most recently developing the QLD Digital License application for the Department of Transport and Main Roads. The Code Heroes team are located in Queensland, Australia and service clients in APAC.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Codeheroes.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.codeheroes.com.au/flutter-developers-australia&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Innoventix Solutions&#x27;, &#x27;summary&#x27;: &#x27;We are a Flutter exclusive mobile app development and Microsoft 365 cloud solutions agency. We help small, medium and enterprise businesses to bring their business process ideas to mobile first apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Innoventix.png&#x27;, &#x27;external_url&#x27;: &#x27;https://innoventixsolutions.com/flutter-app-development/&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;This Might Work&#x27;, &#x27;summary&#x27;: &#x27;As a Digital Product Studio, we partner with startups and brands to transform bold ideas into digital products and services.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ThisMightWork.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.thismightwork.co/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;Apparence.io&#x27;, &#x27;summary&#x27;: &#x27;We are a small studio providing quality apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/apparence_logo_-_Gautier_Siclon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.apparence.io/agence-developpement-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Saurabh Infosys&#x27;, &#x27;summary&#x27;: &#x27;Team of 22 developers providing complete soutions for mobile and web development. Our main focus is on Flutter and backend services like Firebase, PHP,  Supabase, and NodeJS.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Saurabh_Infosys.png&#x27;, &#x27;external_url&#x27;: &#x27;https://saurabhinfosys.com/Flutter-development&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;theTribe&#x27;, &#x27;summary&#x27;: &quot;We&#x27;re building apps like a design studio, where the user is in the center of our approach to make sure we reach your target with success once the app&#x27;s published.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/The_Tribe.png&#x27;, &#x27;external_url&#x27;: &#x27;https://thetribe.io/metier-flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;FF.Next&#x27;, &#x27;summary&#x27;: &#x27;We are a digital product design agency creating beautifully-crafted &amp; highly functional mobile and web applications in more than 20 countries. We’ve been creating &amp; implementing design-driven mobile banking products from Singapore through Central-Eastern Europe to the UK already for 10+ banks and 20+ fintechs in the past 5 years.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ff.next.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.ffnext.io/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Paulonia&#x27;, &#x27;summary&#x27;: &#x27;We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Paulonia.png&#x27;, &#x27;external_url&#x27;: &#x27;https://paulonia.dev/development&#x27;, &#x27;options_location&#x27;: [&#x27;South America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;DiUS&#x27;, &#x27;summary&#x27;: &#x27;DiUS is a technology consultancy with leading capabilities in digital transformation and product development. Our team across Australia and New Zealand leverage specialist expertise in cloud, data, application development, mobile, experience design, IoT and machine learning.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Dius.png&#x27;, &#x27;external_url&#x27;: &#x27;https://dius.com.au/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Oceania&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;icapps&#x27;, &#x27;summary&#x27;: &#x27;icapps is a digital product agency that started with the first Belgian made iOS apps and quickly grew into a company that covers all your custom software needs from strategy, design to development. icapps aims to be at the forefront in everything Flutter in Belgium.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/William_Verhaeghe.png&#x27;, &#x27;external_url&#x27;: &#x27;https://icapps.com/development/mobile/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Nomtek&#x27;, &#x27;summary&#x27;: &#x27;Nomtek is a software development agency delivering impactful mobile and XR apps for change makers. We leverage 14 years of experience to build digital products that people love to use.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Marcin_Durawa.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.nomtek.com/mobile-development/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;80bucks - The App Company&#x27;, &#x27;summary&#x27;: &#x27;At 80bucks, our mission is to create apps that users truly love, with engagement and great design always on top of our minds.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/80_bucks.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.80bucks.co/en/flutter-apps&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;Yes&#x27;}, {&#x27;title&#x27;: &#x27;F22 Labs&#x27;, &#x27;summary&#x27;: &quot;We are a product design and development studio empowering businesses with cutting-edge, high-impact software solutions that fuel growth and drive success. Whether it&#x27;s healthcare, finance, retail, or any other sector, we have led numerous digital transformations. If you have a problem, we would love to learn more and assist you in finding a solution.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/f22_labs.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.f22labs.com/flutter-development/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Nyoka&#x27;, &#x27;summary&#x27;: &#x27;For us, the creation of digital products is not only about intelligent code or creative design. This is a real partnership between ideologists and innovators. Our cooperation is based on transparency, communication, professional project management, and attention to detail.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Nyoka.png&#x27;, &#x27;external_url&#x27;: &#x27;https://nyoka-flutter.com/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Applover&#x27;, &#x27;summary&#x27;: &#x27;You have a wonderful idea but lack the technology knowledge to make it a reality? With over 140 experienced software developers, we can estimate your project, conduct a technical workshop for your team, and eventually build your digital product from scratch, in time for release.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/App_lover.png&#x27;, &#x27;external_url&#x27;: &#x27;https://applover.com/services/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Approachable Geek&#x27;, &#x27;summary&#x27;: &quot;Whether you are looking to improve your company&#x27;s internal processes, or have a million-dollar app idea, we are the Approachable Geeks you have been looking for. We&#x27;re Approachable (easy to talk to) and Geeks (technically proficient), and the combination of those means that you get clear communication throughout the process and killer code.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/approachable_geek_-_Garrett_Barlocker.png&#x27;, &#x27;external_url&#x27;: &#x27;https://approachablegeek.com/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Indus Net Technologies&#x27;, &#x27;summary&#x27;: &#x27;INT. (Indus Net Technologies) is a full-stack software engineering solutions company with a pioneering legacy spanning 25 years, over 500 clients and 11,000 plus client projects. Over the years it has built industry recognition as an innovator and a strategic digital partner championing the cause of human-centric and outcome-driven solution offerings. INT. has a dedicated and niche focus on banking, insurance, financial services, pharmaceuticals and healthcare industries.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Int.png&#x27;, &#x27;external_url&#x27;: &#x27;https://indusnet.zoholandingpage.in/INT-Flutterdevelopment&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Infotop Solutions&#x27;, &#x27;summary&#x27;: &#x27;Infotop solutions is software development company working in web and mobile app development. We have 7+ years of experience in mobile and app development.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Fast_live_line.png&#x27;, &#x27;external_url&#x27;: &#x27;https://infotopsolutions.com/app-development/hybrid-app-development-flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Loomery&#x27;, &#x27;summary&#x27;: &quot;Loomery is a team of makers who partner with you to learn at pace, launch with impact and lead your organisation forward. Our making-led strategic approaches deliver solutions to help your organisation go further and accelerate towards your product future in days or weeks, not months or years. We&#x27;re cross-platform advocates who have spent the last four years putting Flutter through its paces.&quot;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Loomery.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.loomery.com/loomery-x-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Reactree&#x27;, &#x27;summary&#x27;: &#x27;Reactree is a rapidly growing technology company that empowers people to believe that sky is indeed the limit.  We craft attractive mobile &amp; web app experiences driven by design, strategy and technology.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Reactree.png&#x27;, &#x27;external_url&#x27;: &#x27;https://reactree.com/flutter-development-services/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Netglade&#x27;, &#x27;summary&#x27;: &#x27;Netglade is a software agency specializing in Flutter app development. We create, maintain and improve apps that are used by over a million users every day.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Netglade.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.netglade.cz/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;GeekyAnts&#x27;, &#x27;summary&#x27;: &#x27;GeekyAnts provides end-to-end app development and consultation services. Powered by our passionate Flutter team, we solve problems for Small, Medium, and Enterprise companies. Our expertise is building custom internal software, B2B and B2C software, web and mobile applications, and MVPs.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/GeekyAnts.png&#x27;, &#x27;external_url&#x27;: &#x27;https://geekyants.com/hire-flutter-developers/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Mokutan Technologies Ltd&#x27;, &#x27;summary&#x27;: &#x27;We are a UK based Flutter development agency. Specialising in building custom B2B SaaS and internal business applications.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Mokutan.png&#x27;, &#x27;external_url&#x27;: &#x27;http://www.mokutan.io/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;GITS.id&#x27;, &#x27;summary&#x27;: &#x27;We thrive to develop applications for good. To empower people, to increase productivity, to ease your daily life. Our applications are to get it simple.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/gits.id.png&#x27;, &#x27;external_url&#x27;: &#x27;https://gits.id/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Pentagon Co., Ltd.&#x27;, &#x27;summary&#x27;: &#x27;&quot;Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog.&quot;&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Pentagon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://pentagon.tokyo/flutter/&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Supercharge&#x27;, &#x27;summary&#x27;: &#x27;At Supercharge, we are your innovation partner to turn disruption into opportunity. With our 200+ digital experts in London, New York, Helsinki, Amsterdam, Vienna, and Budapest, we work with our clients to create transformative digital solutions. We design, engineer, and scale digital products to make your business fit for the future.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Supercharge.png&#x27;, &#x27;external_url&#x27;: &#x27;https://insights.supercharge.io/book-tech-evaluation-flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;ArcTouch&#x27;, &#x27;summary&#x27;: &#x27;ArcTouch creates lovable apps, websites, and digital experiences to help companies forge meaningful connections with their customers.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/ArcTouch.png&#x27;, &#x27;external_url&#x27;: &#x27;https://arctouch.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;OakTree Apps&#x27;, &#x27;summary&#x27;: &#x27;OakTree Apps is a fully remote company that works with small and medium enterprises on greenfield projects using Flutter for mobile apps. We are a team of 23, 18 of them being engineers (11 for Flutter/mobile and 7 for backend technologies).&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Pratik_Khivesara.png&#x27;, &#x27;external_url&#x27;: &#x27;https://oaktreeapps.com/services/flutter-app-development&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Mr. Milu&#x27;, &#x27;summary&#x27;: &#x27;Independent Digital Agency with integral services: digital design, development, user experience, data analytics and digital marketing&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/mr_milu.png&#x27;, &#x27;external_url&#x27;: &#x27;https://mrmilu.com/en/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Ippon Technologies&#x27;, &#x27;summary&#x27;: &#x27;Ippon is a technology consulting and expertise firm. We support the digital transformation of companies, helping them to design their strategy and deploy their roadmap at scale.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Ippon.png&#x27;, &#x27;external_url&#x27;: &#x27;https://fr.ippon.tech/expertises/expertise-mobile/&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;In The Pocket&#x27;, &#x27;summary&#x27;: &#x27;In The Pocket is a digital product studio. We take you from ideation to a full-blown digital experience, ready to hit the market and create value for your business.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Inthepocket.png&#x27;, &#x27;external_url&#x27;: &#x27;https://tech.inthepocket.com/technology/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Europe&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;Plangora Limited&#x27;, &#x27;summary&#x27;: &#x27;Founded in 2016, Plangora is driven by a passion for harnessing the power of cutting-edge technology to deliver exceptional results for our clients. With a focus on custom-tailored solutions, we have successfully transformed the visions of over 100 companies into tangible products and comprehensive IT solutions within just 7 years.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Plangora.png&#x27;, &#x27;external_url&#x27;: &#x27;https://www.plangora.com/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;Asia&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Startup&#x27;, &#x27;Small-to-medium Business&#x27;, &#x27;Enterprise&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}, {&#x27;title&#x27;: &#x27;JIITAK Inc.&#x27;, &#x27;summary&#x27;: &#x27;Our company is a pioneering Flutter developer, harnessing its versatility to craft seamless applications across Android, iOS, web, Windows, MacOS, and iPad with a single codebase. Leveraging our proprietary frameworks and packages, we accelerate development, delivering unparalleled speed and user experiences indistinguishable from native apps.&#x27;, &#x27;card&#x27;: &#x27;https://storage.googleapis.com/cms-storage-bucket/original_images/Jiitaik.png&#x27;, &#x27;external_url&#x27;: &#x27;https://jiitak.jp/services/flutter&#x27;, &#x27;options_location&#x27;: [&#x27;North America&#x27;], &#x27;options_customer_size&#x27;: [&#x27;Small-to-medium Business&#x27;], &#x27;options_GCP_partner&#x27;: &#x27;No&#x27;}]).length > shownPartnersCount">Load more</button>
+    </div>
+  </section>
+  
+  
+  <section id="featured-events" class="module carousel-section">
+    <h1>Resources for Flutter <br/> Consultants</h1>
+    <div 
+      class="carousel" 
+      x-data="Carousel"
+      x-on:resize.window.debounce.300="onResize">
+      <div 
+        class="carousel-slider"
+        x-ref="slider" 
+        x-on:scroll="onScroll">
+
+        
+            
+
+<div class="carousel-featured-card">
+    
+    <div
+      class="media"
+      style="background-image:url(https://storage.googleapis.com/cms-storage-bucket/images/Devices_alt_-_Gradient.width-680.png)">
+    </div>
+    <div 
+      class="text "
+      style="background-color: #027DFD">
+      <h3>Leverage the Flutter Pitch Deck</h3>
+      <p>Make a compelling case for Flutter by copying the template and adding your own case studies.</p>
+      
+        <a href="https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy" target="_blank" class="btn quiet"> 
+          Get the slides &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      
+    </div>
+</div>
+        
+            
+
+<div class="carousel-featured-card">
+    
+    <div
+      class="media"
+      style="background-image:url(https://storage.googleapis.com/cms-storage-bucket/images/Bizaia.width-680.png)">
+    </div>
+    <div 
+      class="text "
+      style="background-color: #027DFD">
+      <h3>How IBM Created a Flutter Center of Excellence</h3>
+      <p>Learn why and how IBM created a center of excellence with hundreds of Flutter developers.</p>
+      
+        <a href="https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441" target="_blank" class="btn quiet"> 
+          Read this Story &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      
+    </div>
+</div>
+        
+            
+
+<div class="carousel-featured-card">
+    
+    <div
+      class="media"
+      style="background-image:url(https://storage.googleapis.com/cms-storage-bucket/images/Timeline.width-680.png)">
+    </div>
+    <div 
+      class="text "
+      style="background-color: #027DFD">
+      <h3>Training Clients on Flutter</h3>
+      <p>Learn how VGV created a successful training program to upskill consultants and customers.</p>
+      
+        <a href="http://verygood.ventures/blog/training-clients-in-flutter" target="_blank" class="btn quiet"> 
+          Read this Story &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      
+    </div>
+</div>
+        
+            
+
+<div class="carousel-featured-card">
+    
+    <div
+      class="media"
+      style="background-image:url(https://storage.googleapis.com/cms-storage-bucket/images/Developer_widget.width-680.png)">
+    </div>
+    <div 
+      class="text "
+      style="background-color: #027DFD">
+      <h3>How Consultants Build Faster with FlutterFlow</h3>
+      <p>Explore the benefits of FlutterFlow, a low-code editor for Flutter apps.</p>
+      
+        <a href="https://medium.com/flutterflow-enterprise/how-flutterflow-helps-consultants-solve-clients-last-mile-of-digital-transformation-b6d8e7d3b49e" target="_blank" class="btn quiet"> 
+          Read this Story &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      
+    </div>
+</div>
+        
+            
+
+<div class="carousel-featured-card">
+    
+    <div
+      class="media"
+      style="background-image:url(https://storage.googleapis.com/cms-storage-bucket/images/App.width-680.png)">
+    </div>
+    <div 
+      class="text "
+      style="background-color: #027DFD">
+      <h3>Build Wonders with Flutter</h3>
+      <p>See why Flutter is such a valuable tool for award winning design agencies like gSkinner</p>
+      
+        <a href="https://www.youtube.com/watch?v=6IKhXXFFOuw" target="_blank" class="btn quiet"> 
+          Watch the video &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      
+    </div>
+</div>
+        
+      </div>
+      <div class="container carousel-progress">
+        <div class="carousel-track">
+          <div class="carousel-completed" x-ref="progress"></div>
+        </div>
+        <div class="carousel-nav">
+          <a 
+            href="#" class="disabled"
+            x-ref="prevBtn" @click.prevent="navigate($event, 'bwd')">
+            <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+          </a>
+          <a 
+            href="#" class="disabled"
+            x-ref="nextBtn" @click.prevent="navigate($event, 'fwd')">
+            <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section id="newsletter">
+    
+
+
+<div class="newsletter container">
+  <div class="text">
+    <h2>Join our <br/>newsletter</h2>
+  </div>
+  <div class="form">
+    <form x-data="Newsletter" x-on:submit="onSubmit($event)">
+      <fieldset x-show="!submitted">
+        <h3>Keep up with the latest Flutter news, releases, and more:</h3>
+
+        <div class="global-error">
+          <span 
+            class="error" 
+            x-show="!!errors['unknown']">
+            There was an unknown error submitting your data. Please try again. 
+          </span>
+        </div>
+
+        <div class="field-wrapper">
+          <div class="field" x-bind:class="{ 'error': !!errors['email'] }">
+            <i class="far fa-envelope fa-2x"></i>
+            <label for="email" class="hidden">Email</label>
+            <input 
+              type="email" id="email" name="email" placeholder="Enter your email address"
+              x-model="fields.email" x-on:focus="focused = true">
+          </div>
+          <span 
+            class="error" 
+            x-show="!!errors['email']" x-text="errors['email']">
+          </span>
+        </div>
+        <div 
+          class="hidden-fields" 
+          x-show="focused" 
+          x-bind:class="{ 'active': focused }">
+          
+          <div class="field-grid">
+            <div class="field-wrapper">
+              <div class="field" x-bind:class="{ 'error': !!errors['first_name'] }">
+                <label for="firstname" class="hidden">First name</label>
+                <input 
+                  type="text" id="firstname" name="firstname" placeholder="First name" 
+                  x-model="fields.first_name">
+              </div>
+              <span 
+                class="error" 
+                x-show="!!errors['first_name']" x-text="errors['first_name']">
+              </span>
+            </div>
+            <div class="field-wrapper">
+              <div class="field" x-bind:class="{ 'error': !!errors['last_name'] }">
+                <label for="lastname" class="hidden">Last name</label>
+                <input 
+                  type="text" id="lastname" name="lastname" placeholder="Last name" 
+                  x-model="fields.last_name">
+              </div>
+              <span 
+                class="error" 
+                x-show="!!errors['last_name']" x-text="errors['last_name']">
+              </span>
+            </div>
+          </div>
+
+          <div class="field-wrapper">
+            <div class="field" x-bind:class="{ 'error': !!errors['country'] }">
+              <label for="country" class="hidden">Country</label>
+              <select name="countries" id="country" x-model="fields.country">
+                <option value="" disabled selected>Country</option>
+                
+                  <option value="US">United States of America</option>
+                
+                  <option value="AF">Afghanistan</option>
+                
+                  <option value="AX">Åland Islands</option>
+                
+                  <option value="AL">Albania</option>
+                
+                  <option value="DZ">Algeria</option>
+                
+                  <option value="AS">American Samoa</option>
+                
+                  <option value="AD">Andorra</option>
+                
+                  <option value="AO">Angola</option>
+                
+                  <option value="AI">Anguilla</option>
+                
+                  <option value="AQ">Antarctica</option>
+                
+                  <option value="AG">Antigua and Barbuda</option>
+                
+                  <option value="AR">Argentina</option>
+                
+                  <option value="AM">Armenia</option>
+                
+                  <option value="AW">Aruba</option>
+                
+                  <option value="AU">Australia</option>
+                
+                  <option value="AT">Austria</option>
+                
+                  <option value="AZ">Azerbaijan</option>
+                
+                  <option value="BS">Bahamas</option>
+                
+                  <option value="BH">Bahrain</option>
+                
+                  <option value="BD">Bangladesh</option>
+                
+                  <option value="BB">Barbados</option>
+                
+                  <option value="BY">Belarus</option>
+                
+                  <option value="BE">Belgium</option>
+                
+                  <option value="BZ">Belize</option>
+                
+                  <option value="BJ">Benin</option>
+                
+                  <option value="BM">Bermuda</option>
+                
+                  <option value="BT">Bhutan</option>
+                
+                  <option value="BO">Bolivia</option>
+                
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                
+                  <option value="BA">Bosnia and Herzegovina</option>
+                
+                  <option value="BW">Botswana</option>
+                
+                  <option value="BV">Bouvet Island</option>
+                
+                  <option value="BR">Brazil</option>
+                
+                  <option value="IO">British Indian Ocean Territory</option>
+                
+                  <option value="BN">Brunei</option>
+                
+                  <option value="BG">Bulgaria</option>
+                
+                  <option value="BF">Burkina Faso</option>
+                
+                  <option value="BI">Burundi</option>
+                
+                  <option value="CV">Cabo Verde</option>
+                
+                  <option value="KH">Cambodia</option>
+                
+                  <option value="CM">Cameroon</option>
+                
+                  <option value="CA">Canada</option>
+                
+                  <option value="KY">Cayman Islands</option>
+                
+                  <option value="CF">Central African Republic</option>
+                
+                  <option value="TD">Chad</option>
+                
+                  <option value="CL">Chile</option>
+                
+                  <option value="CN">China</option>
+                
+                  <option value="CX">Christmas Island</option>
+                
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                
+                  <option value="CO">Colombia</option>
+                
+                  <option value="KM">Comoros</option>
+                
+                  <option value="CG">Congo</option>
+                
+                  <option value="CD">Congo (the Democratic Republic of the)</option>
+                
+                  <option value="CK">Cook Islands</option>
+                
+                  <option value="CR">Costa Rica</option>
+                
+                  <option value="CI">Côte d&#x27;Ivoire</option>
+                
+                  <option value="HR">Croatia</option>
+                
+                  <option value="CU">Cuba</option>
+                
+                  <option value="CW">Curaçao</option>
+                
+                  <option value="CY">Cyprus</option>
+                
+                  <option value="CZ">Czechia</option>
+                
+                  <option value="DK">Denmark</option>
+                
+                  <option value="DJ">Djibouti</option>
+                
+                  <option value="DM">Dominica</option>
+                
+                  <option value="DO">Dominican Republic</option>
+                
+                  <option value="EC">Ecuador</option>
+                
+                  <option value="EG">Egypt</option>
+                
+                  <option value="SV">El Salvador</option>
+                
+                  <option value="GQ">Equatorial Guinea</option>
+                
+                  <option value="ER">Eritrea</option>
+                
+                  <option value="EE">Estonia</option>
+                
+                  <option value="SZ">Eswatini</option>
+                
+                  <option value="ET">Ethiopia</option>
+                
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                
+                  <option value="FO">Faroe Islands</option>
+                
+                  <option value="FJ">Fiji</option>
+                
+                  <option value="FI">Finland</option>
+                
+                  <option value="FR">France</option>
+                
+                  <option value="GF">French Guiana</option>
+                
+                  <option value="PF">French Polynesia</option>
+                
+                  <option value="TF">French Southern Territories</option>
+                
+                  <option value="GA">Gabon</option>
+                
+                  <option value="GM">Gambia</option>
+                
+                  <option value="GE">Georgia</option>
+                
+                  <option value="DE">Germany</option>
+                
+                  <option value="GH">Ghana</option>
+                
+                  <option value="GI">Gibraltar</option>
+                
+                  <option value="GR">Greece</option>
+                
+                  <option value="GL">Greenland</option>
+                
+                  <option value="GD">Grenada</option>
+                
+                  <option value="GP">Guadeloupe</option>
+                
+                  <option value="GU">Guam</option>
+                
+                  <option value="GT">Guatemala</option>
+                
+                  <option value="GG">Guernsey</option>
+                
+                  <option value="GN">Guinea</option>
+                
+                  <option value="GW">Guinea-Bissau</option>
+                
+                  <option value="GY">Guyana</option>
+                
+                  <option value="HT">Haiti</option>
+                
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                
+                  <option value="VA">Holy See</option>
+                
+                  <option value="HN">Honduras</option>
+                
+                  <option value="HK">Hong Kong</option>
+                
+                  <option value="HU">Hungary</option>
+                
+                  <option value="IS">Iceland</option>
+                
+                  <option value="IN">India</option>
+                
+                  <option value="ID">Indonesia</option>
+                
+                  <option value="IR">Iran</option>
+                
+                  <option value="IQ">Iraq</option>
+                
+                  <option value="IE">Ireland</option>
+                
+                  <option value="IM">Isle of Man</option>
+                
+                  <option value="IL">Israel</option>
+                
+                  <option value="IT">Italy</option>
+                
+                  <option value="JM">Jamaica</option>
+                
+                  <option value="JP">Japan</option>
+                
+                  <option value="JE">Jersey</option>
+                
+                  <option value="JO">Jordan</option>
+                
+                  <option value="KZ">Kazakhstan</option>
+                
+                  <option value="KE">Kenya</option>
+                
+                  <option value="KI">Kiribati</option>
+                
+                  <option value="KW">Kuwait</option>
+                
+                  <option value="KG">Kyrgyzstan</option>
+                
+                  <option value="LA">Laos</option>
+                
+                  <option value="LV">Latvia</option>
+                
+                  <option value="LB">Lebanon</option>
+                
+                  <option value="LS">Lesotho</option>
+                
+                  <option value="LR">Liberia</option>
+                
+                  <option value="LY">Libya</option>
+                
+                  <option value="LI">Liechtenstein</option>
+                
+                  <option value="LT">Lithuania</option>
+                
+                  <option value="LU">Luxembourg</option>
+                
+                  <option value="MO">Macao</option>
+                
+                  <option value="MG">Madagascar</option>
+                
+                  <option value="MW">Malawi</option>
+                
+                  <option value="MY">Malaysia</option>
+                
+                  <option value="MV">Maldives</option>
+                
+                  <option value="ML">Mali</option>
+                
+                  <option value="MT">Malta</option>
+                
+                  <option value="MH">Marshall Islands</option>
+                
+                  <option value="MQ">Martinique</option>
+                
+                  <option value="MR">Mauritania</option>
+                
+                  <option value="MU">Mauritius</option>
+                
+                  <option value="YT">Mayotte</option>
+                
+                  <option value="MX">Mexico</option>
+                
+                  <option value="FM">Micronesia (Federated States of)</option>
+                
+                  <option value="MD">Moldova</option>
+                
+                  <option value="MC">Monaco</option>
+                
+                  <option value="MN">Mongolia</option>
+                
+                  <option value="ME">Montenegro</option>
+                
+                  <option value="MS">Montserrat</option>
+                
+                  <option value="MA">Morocco</option>
+                
+                  <option value="MZ">Mozambique</option>
+                
+                  <option value="MM">Myanmar</option>
+                
+                  <option value="NA">Namibia</option>
+                
+                  <option value="NR">Nauru</option>
+                
+                  <option value="NP">Nepal</option>
+                
+                  <option value="NL">Netherlands</option>
+                
+                  <option value="NC">New Caledonia</option>
+                
+                  <option value="NZ">New Zealand</option>
+                
+                  <option value="NI">Nicaragua</option>
+                
+                  <option value="NE">Niger</option>
+                
+                  <option value="NG">Nigeria</option>
+                
+                  <option value="NU">Niue</option>
+                
+                  <option value="NF">Norfolk Island</option>
+                
+                  <option value="KP">North Korea</option>
+                
+                  <option value="MK">North Macedonia</option>
+                
+                  <option value="MP">Northern Mariana Islands</option>
+                
+                  <option value="NO">Norway</option>
+                
+                  <option value="OM">Oman</option>
+                
+                  <option value="PK">Pakistan</option>
+                
+                  <option value="PW">Palau</option>
+                
+                  <option value="PS">Palestine, State of</option>
+                
+                  <option value="PA">Panama</option>
+                
+                  <option value="PG">Papua New Guinea</option>
+                
+                  <option value="PY">Paraguay</option>
+                
+                  <option value="PE">Peru</option>
+                
+                  <option value="PH">Philippines</option>
+                
+                  <option value="PN">Pitcairn</option>
+                
+                  <option value="PL">Poland</option>
+                
+                  <option value="PT">Portugal</option>
+                
+                  <option value="PR">Puerto Rico</option>
+                
+                  <option value="QA">Qatar</option>
+                
+                  <option value="RE">Réunion</option>
+                
+                  <option value="RO">Romania</option>
+                
+                  <option value="RU">Russia</option>
+                
+                  <option value="RW">Rwanda</option>
+                
+                  <option value="BL">Saint Barthélemy</option>
+                
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                
+                  <option value="KN">Saint Kitts and Nevis</option>
+                
+                  <option value="LC">Saint Lucia</option>
+                
+                  <option value="MF">Saint Martin (French part)</option>
+                
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                
+                  <option value="WS">Samoa</option>
+                
+                  <option value="SM">San Marino</option>
+                
+                  <option value="ST">Sao Tome and Principe</option>
+                
+                  <option value="SA">Saudi Arabia</option>
+                
+                  <option value="SN">Senegal</option>
+                
+                  <option value="RS">Serbia</option>
+                
+                  <option value="SC">Seychelles</option>
+                
+                  <option value="SL">Sierra Leone</option>
+                
+                  <option value="SG">Singapore</option>
+                
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                
+                  <option value="SK">Slovakia</option>
+                
+                  <option value="SI">Slovenia</option>
+                
+                  <option value="SB">Solomon Islands</option>
+                
+                  <option value="SO">Somalia</option>
+                
+                  <option value="ZA">South Africa</option>
+                
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                
+                  <option value="KR">South Korea</option>
+                
+                  <option value="SS">South Sudan</option>
+                
+                  <option value="ES">Spain</option>
+                
+                  <option value="LK">Sri Lanka</option>
+                
+                  <option value="SD">Sudan</option>
+                
+                  <option value="SR">Suriname</option>
+                
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                
+                  <option value="SE">Sweden</option>
+                
+                  <option value="CH">Switzerland</option>
+                
+                  <option value="SY">Syria</option>
+                
+                  <option value="TW">Taiwan</option>
+                
+                  <option value="TJ">Tajikistan</option>
+                
+                  <option value="TZ">Tanzania</option>
+                
+                  <option value="TH">Thailand</option>
+                
+                  <option value="TL">Timor-Leste</option>
+                
+                  <option value="TG">Togo</option>
+                
+                  <option value="TK">Tokelau</option>
+                
+                  <option value="TO">Tonga</option>
+                
+                  <option value="TT">Trinidad and Tobago</option>
+                
+                  <option value="TN">Tunisia</option>
+                
+                  <option value="TR">Turkey</option>
+                
+                  <option value="TM">Turkmenistan</option>
+                
+                  <option value="TC">Turks and Caicos Islands</option>
+                
+                  <option value="TV">Tuvalu</option>
+                
+                  <option value="UG">Uganda</option>
+                
+                  <option value="UA">Ukraine</option>
+                
+                  <option value="AE">United Arab Emirates</option>
+                
+                  <option value="GB">United Kingdom</option>
+                
+                  <option value="UM">United States Minor Outlying Islands</option>
+                
+                  <option value="US">United States of America</option>
+                
+                  <option value="UY">Uruguay</option>
+                
+                  <option value="UZ">Uzbekistan</option>
+                
+                  <option value="VU">Vanuatu</option>
+                
+                  <option value="VE">Venezuela</option>
+                
+                  <option value="VN">Vietnam</option>
+                
+                  <option value="VG">Virgin Islands (British)</option>
+                
+                  <option value="VI">Virgin Islands (U.S.)</option>
+                
+                  <option value="WF">Wallis and Futuna</option>
+                
+                  <option value="EH">Western Sahara</option>
+                
+                  <option value="YE">Yemen</option>
+                
+                  <option value="ZM">Zambia</option>
+                
+                  <option value="ZW">Zimbabwe</option>
+                
+              </select>
+            </div>
+            <span 
+              class="error" 
+              x-show="!!errors['country']" x-text="errors['country']">
+            </span>
+          </div>
+
+          <div class="field-wrapper">
+            <div class="checkbox opt-in">
+              <div class="field" x-bind:class="{ 'error': !!errors['optin'] }">
+                <input type="checkbox" name="optin" id="optin" x-model="fields.optin">
+              </div>
+              <label for="optin" class="optin">
+                By using this service, you agree to be bound by our <a href="https://policies.google.com/terms">Google Terms of Service</a>. I
+                acknowledge that the information provided in this form will be subject to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. 
+              </label>
+            </div>
+            <span 
+                class="error" 
+                x-show="!!errors['optin']" x-text="errors['optin']">
+          </div>
+          <div class="captcha-container field-wrapper">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LdG504kAAAAAPZGIhZd_--CkTASNKaW64oMriCL"
+              x-model="fields.captcha"
+              x-bind:class="{ 'error': !!errors['captcha'] }"
+            >
+            </div>
+            <span 
+              class="error" 
+              x-show="!!errors['captcha']" x-text="errors['captcha']">
+            </span>
+          </div>
+          <div>
+            <input type="submit" class="btn primary" value="Subscribe">
+          </div>
+
+        </div>
+      </fieldset>
+      <div class="success" x-show="submitted">
+        <h3>You're in!</h3>
+        <p>You have successfully signed up for the latest Flutter updates and announcements.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+  </section>
+
+
+  
+
+<section id="cta" class="module">
+  <div class="insert cta-insert container">
+    <div class="text">
+      <h3>Get started</h3>
+      <p>Instant access to the power of the Flutter framework</p>
+      <div>
+        <a href="https://docs.flutter.dev/get-started/install" class="btn">
+          Install
+        </a>
+        <a href="https://docs.flutter.dev" class="btn quiet">
+          Read the docs &nbsp;<i class="fas fa-arrow-right fa-sm"></i>
+        </a>
+      </div>
+    </div>
+    <div class="media">
+      <img src="https://storage.googleapis.com/cms-storage-bucket/72521e62275b24d3c37d.png" alt="Powered by Dart">
+    </div>
+  </div>
+</section>
+
+
+
+</section>
+
+    </main>
+    
+    
+
+<footer x-data="{ darkMode: window.location.href.includes('games') }" :class="window.location.href.includes('games') ? 'footer-dark' : 'footer-light'">
+  <div class="content footer-main">
+    <div class="logo">
+      <a href="/">
+        <img
+          x-show="!darkMode"
+          src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg"
+          width="154"
+          alt="Flutter"
+        />
+        <img
+          x-show="darkMode"
+          src="https://storage.googleapis.com/cms-storage-bucket/1870bdaf4a9523a10d5b.svg"
+          width="154"
+          alt="Flutter"
+        />
+      </a>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li>About Flutter</li>
+        <li>
+          <a href="https://docs.flutter.dev/jobs" target="_blank">Careers</a>
+        </li>
+        <li><a href="https://medium.com/flutter" target="_blank">News</a></li>
+        <li><a href="/brand">Brand</a></li>
+        <li><a href="/culture">Culture</a></li>
+      </ul>
+      <ul>
+        <li>Learn Flutter</li>
+        <li><a href="/learn" target="_blank">Learning Journey</a></li>
+        <li><a href="https://docs.flutter.dev/codelabs" target="_blank">Codelabs</a></li>
+        <li>
+          <a href="https://flutter.github.io/samples" target="_blank"
+            >Samples</a
+          >
+        </li>
+        <li><a href="https://docs.flutter.dev/cookbook" target="_blank">Cookbook</a></li>
+      </ul>
+      <ul>
+        <li>Multi-Platform</li>
+        <li><a href="/multi-platform/mobile">Mobile</a></li>
+        <li><a href="/multi-platform/web">Web</a></li>
+        <li><a href="/multi-platform/desktop">Desktop</a></li>
+        <li><a href="/multi-platform/embedded">Embedded</a></li>
+        <li><a href="/multi-platform/ios">iOS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content footer-social">
+    <div>
+      <a
+        href="https://www.youtube.com/flutterdev"
+        target="_blank"
+        aria-label="Flutter YouTube"
+      >
+        <i class="fab fa-youtube fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-youtube fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://twitter.com/flutterdev"
+        target="_blank"
+        aria-label="Flutter Twittter"
+      >
+        <i class="fab fa-x-twitter fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-x-twitter fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://github.com/flutter"
+        target="_blank"
+        aria-label="Flutter Github"
+      >
+        <i class="fab fa-github fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-github fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://medium.com/flutter"
+        target="_blank"
+        aria-label="Flutter Medium"
+      >
+        <i class="fab fa-medium fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-medium fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://www.meetup.com/pro/flutter/"
+        target="_blank"
+        aria-label="Flutter Meetup"
+      >
+        <i class="fab fa-meetup fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-meetup fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/showcase/flutterdevofficial/"
+        target="_blank"
+        aria-label="Flutter LinkedIn"
+      >
+        <i class="fab fa-linkedin fa-lg" x-show="!darkMode"></i>
+        <i class="fa-brands fa-linkedin fa-lg" style="color: #e8eaed;" x-show="darkMode"></i>
+      </a>
+    </div>
+  </div>
+  <div class="content footer-tray">
+    <div>
+      Except as otherwise noted, this work is licensed under a Creative Commons
+      Attribution 4.0 International License, and code samples are licensed under
+      the BSD License.
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://docs.flutter.dev/tos">Terms</a></li>
+        <li>
+          <a href="https://policies.google.com/privacy?hl=en" target="_blank"
+            >Privacy</a
+          >
+        </li>
+        <li><a href="https://docs.flutter.dev/security">Security</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js"
+    data-glue-cookie-notification-bar-category="2A"
+    data-glue-cookie-notification-bar-site-id="flutter.dev"
+    ></script> 
+
+    
+    <section class="cookie-snack" x-data="Snack" x-bind:class="{ 'show': !agreed && window.location.href.includes('consultants') }">
+    <div class="container">
+      <p>NOTICE: Flutter hopes this directory is useful for customers seeking consultants with Flutter experience; however, Flutter makes no representation to you or anyone else that the listed consultants are Flutter or Google partners, and Flutter does not represent or warrant their qualifications or the quality of services you may receive.  Your relationship is strictly between you and the consultants.</p>
+      <button @click.prevent="dismiss" class="solid">Okay</button>
+    </div>
+  </section>
+  
+
+    
+    <script src="https://storage.googleapis.com/cms-storage-bucket/main.ce9ccc9c4873b0fef100.js"></script>
+    
+
+  </body>
+</html>
